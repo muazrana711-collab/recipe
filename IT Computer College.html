@@ -1,0 +1,5867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>IT Computer College Zafarwal</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#ffffff;
+    color:#18243a;
+    overflow-x:hidden;
+}
+
+img{
+    max-width:100%;
+}
+
+button,
+input,
+select,
+textarea{
+    font-family:inherit;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(6,26,64,.98);
+    backdrop-filter:blur(14px);
+    box-shadow:0 5px 25px rgba(0,0,0,.20);
+}
+
+.navbar{
+    max-width:1300px;
+    margin:auto;
+    min-height:78px;
+    padding:9px 15px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:#fff;
+    text-decoration:none;
+    min-width:max-content;
+    flex-shrink:0;
+}
+
+.logo img{
+    width:58px;
+    height:58px;
+    object-fit:contain;
+    border-radius:50%;
+    background:#fff;
+    padding:2px;
+    border:2px solid rgba(86,180,255,.65);
+
+    box-shadow:
+        0 0 10px rgba(86,180,255,.30),
+        0 0 22px rgba(86,180,255,.15);
+
+    animation:logoPulse 3s ease-in-out infinite;
+}
+
+.logo-text{
+    line-height:1.1;
+}
+
+.logo-text strong{
+    display:block;
+    font-size:18px;
+    color:#fff;
+}
+
+.logo-text span{
+    font-size:11px;
+    color:#56b4ff;
+    letter-spacing:2px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.nav-links{
+    list-style:none;
+    display:flex;
+    align-items:center;
+    gap:2px;
+    margin-left:auto;
+}
+
+.nav-links > li{
+    position:relative;
+}
+
+.nav-links > li > a{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    color:#fff;
+    text-decoration:none;
+    padding:11px 9px;
+    border-radius:8px;
+    font-size:13px;
+    transition:.3s;
+    white-space:nowrap;
+}
+
+.nav-links > li > a:hover{
+    background:rgba(86,180,255,.14);
+    color:#56b4ff;
+}
+
+
+/* =========================================================
+   MAIN COURSES DROPDOWN
+========================================================= */
+
+.dropdown-menu{
+    position:absolute;
+    top:100%;
+    left:0;
+    width:270px;
+
+    background:#061a40;
+
+    border-radius:0 0 12px 12px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.30);
+
+    padding:8px;
+
+    opacity:0;
+    visibility:hidden;
+
+    transform:translateY(10px);
+
+    transition:.3s;
+}
+
+.dropdown:hover > .dropdown-menu{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+
+.dropdown-menu li{
+    list-style:none;
+    position:relative;
+}
+
+.dropdown-menu li > a{
+    color:#fff;
+    text-decoration:none;
+
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+
+    padding:11px 12px;
+
+    border-radius:7px;
+
+    font-size:13px;
+
+    transition:.3s;
+}
+
+.dropdown-menu li > a:hover{
+    background:#0b2d66;
+    color:#56b4ff;
+}
+
+.dropdown-menu li > a i{
+    margin-right:8px;
+}
+
+
+/* =========================================================
+   NESTED DROPDOWN
+========================================================= */
+
+.has-submenu > a{
+    justify-content:space-between !important;
+}
+
+.has-submenu > a .right-arrow{
+    margin-left:auto;
+    margin-right:0;
+    font-size:11px;
+}
+
+.sub-menu{
+    position:absolute;
+
+    top:0;
+    left:calc(100% - 2px);
+
+    width:245px;
+
+    background:#061a40;
+
+    border-radius:10px;
+
+    padding:8px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
+
+    opacity:0;
+    visibility:hidden;
+
+    transform:translateX(8px);
+
+    transition:.3s;
+
+    z-index:20;
+}
+
+.has-submenu:hover > .sub-menu{
+    opacity:1;
+    visibility:visible;
+    transform:translateX(0);
+}
+
+.sub-menu li a{
+    font-size:13px;
+    padding:10px 12px;
+}
+
+.sub-menu li a i{
+    color:#56b4ff;
+}
+
+
+/* =========================================================
+   SOCIAL ICONS
+========================================================= */
+
+.header-social{
+    margin-left:8px;
+
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+
+    gap:7px;
+
+    flex-shrink:0;
+}
+
+.header-social a{
+    width:36px;
+    height:36px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    background:rgba(255,255,255,.10);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    transition:.35s;
+}
+
+.header-social a:hover{
+    transform:translateY(-4px) scale(1.08);
+
+    background:#56b4ff;
+
+    box-shadow:
+        0 0 18px rgba(86,180,255,.75);
+}
+
+.header-social .fa-youtube{
+    color:#ff4d5a;
+}
+
+.header-social .fa-facebook-f{
+    color:#66aaff;
+}
+
+.header-social .fa-whatsapp{
+    color:#43e879;
+}
+
+.header-social .fa-tiktok{
+    color:#fff;
+}
+
+.header-social a:hover i{
+    color:#fff;
+}
+
+
+/* =========================================================
+   MOBILE BUTTON
+========================================================= */
+
+.menu-btn{
+    display:none;
+
+    color:#fff;
+
+    font-size:25px;
+
+    cursor:pointer;
+
+    flex-shrink:0;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    min-height:650px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:#061a40;
+
+    display:flex;
+    align-items:center;
+}
+
+.hero-content{
+    width:1250px;
+    max-width:100%;
+
+    margin:auto;
+
+    padding:80px 35px;
+
+    position:relative;
+
+    z-index:5;
+}
+
+.hero-content h1{
+    color:#fff;
+
+    font-size:56px;
+
+    line-height:1.08;
+
+    max-width:650px;
+
+    margin-bottom:20px;
+
+    animation:titleGlow 3s ease-in-out infinite;
+}
+
+.hero-content h1 span{
+    color:#56b4ff;
+}
+
+.hero-content p{
+    color:#dcecff;
+
+    font-size:19px;
+
+    line-height:1.7;
+
+    max-width:650px;
+
+    margin-bottom:30px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    text-decoration:none;
+
+    padding:14px 24px;
+
+    border-radius:9px;
+
+    font-weight:bold;
+
+    transition:.35s;
+}
+
+.btn-primary{
+    background:#56b4ff;
+    color:#061a40;
+}
+
+.btn-outline{
+    border:1px solid #56b4ff;
+    color:#fff;
+    background:transparent;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 10px 25px rgba(86,180,255,.30);
+}
+
+
+/* =========================================================
+   HERO BUILDING
+========================================================= */
+
+.hero-image{
+    position:absolute;
+
+    right:-40px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:52%;
+    height:620px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    z-index:1;
+
+    pointer-events:none;
+}
+
+.hero-image img{
+    width:100%;
+
+    max-width:650px;
+
+    max-height:620px;
+
+    object-fit:contain;
+
+    opacity:.13;
+
+    filter:
+        brightness(1.25)
+        contrast(.75)
+        saturate(.7)
+        drop-shadow(
+            0 10px 35px rgba(86,180,255,.10)
+        );
+
+    animation:buildingFloat 6s ease-in-out infinite;
+
+    -webkit-mask-image:
+        linear-gradient(
+            to right,
+            transparent 0%,
+            rgba(0,0,0,.35) 15%,
+            #000 42%,
+            #000 75%,
+            transparent 100%
+        );
+
+    mask-image:
+        linear-gradient(
+            to right,
+            transparent 0%,
+            rgba(0,0,0,.35) 15%,
+            #000 42%,
+            #000 75%,
+            transparent 100%
+        );
+}
+
+.hero::before,
+.hero::after{
+    content:"";
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(2px);
+
+    pointer-events:none;
+}
+
+.hero::before{
+    width:350px;
+    height:350px;
+
+    right:-100px;
+    top:-100px;
+
+    background:rgba(86,180,255,.08);
+
+    animation:floatCircle 8s ease-in-out infinite;
+}
+
+.hero::after{
+    width:250px;
+    height:250px;
+
+    left:-100px;
+    bottom:-100px;
+
+    background:rgba(86,180,255,.06);
+
+    animation:floatCircle 7s ease-in-out infinite reverse;
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+section{
+    padding:85px 25px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:38px;
+    color:#061a40;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:#69778c;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-section{
+    background:#fff;
+}
+
+.about-grid{
+    display:grid;
+
+    grid-template-columns:1fr 1.15fr;
+
+    gap:45px;
+
+    align-items:start;
+}
+
+.about-image{
+    position:sticky;
+    top:110px;
+}
+
+.about-image img{
+    width:100%;
+
+    max-height:600px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    box-shadow:
+        0 15px 40px rgba(6,26,64,.18);
+
+    transition:.5s;
+}
+
+.about-image img:hover{
+    transform:scale(1.025);
+
+    box-shadow:
+        0 20px 50px rgba(6,26,64,.28);
+}
+
+.about-text h3{
+    color:#061a40;
+
+    font-size:30px;
+
+    margin-bottom:18px;
+}
+
+.about-text p{
+    color:#65748a;
+
+    line-height:1.85;
+
+    margin-bottom:18px;
+}
+
+
+/* =========================================================
+   ABOUT SPECIAL BOXES
+========================================================= */
+
+.about-special-box{
+    background:linear-gradient(
+        135deg,
+        #f5faff,
+        #ffffff
+    );
+
+    border:1px solid #dcecff;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    margin:22px 0;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 8px 25px rgba(6,26,64,.06);
+
+    transition:.4s;
+}
+
+.about-special-box::before{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:5px;
+    height:100%;
+
+    background:
+        linear-gradient(
+            #168cff,
+            #56b4ff
+        );
+}
+
+.about-special-box:hover{
+    transform:translateY(-6px);
+
+    box-shadow:
+        0 18px 40px rgba(6,26,64,.12);
+}
+
+.about-special-box h4{
+    color:#061a40;
+
+    font-size:22px;
+
+    margin-bottom:12px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+}
+
+.about-special-box h4 i{
+    color:#168cff;
+}
+
+.about-special-box p{
+    margin:0;
+
+    color:#607089;
+
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   WHY CHOOSE US BOXES
+========================================================= */
+
+.why-section{
+    background:#f7faff;
+}
+
+.why-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:25px;
+}
+
+.why-card{
+    padding:30px;
+
+    border-radius:18px;
+
+    background:#fff;
+
+    border:1px solid #e5edf7;
+
+    text-align:center;
+
+    transition:.4s;
+
+    box-shadow:
+        0 7px 22px rgba(6,26,64,.05);
+}
+
+.why-card:hover{
+    transform:translateY(-8px);
+
+    box-shadow:
+        0 18px 40px rgba(6,26,64,.13);
+}
+
+.why-card i{
+    font-size:35px;
+
+    color:#168cff;
+
+    margin-bottom:15px;
+}
+
+.why-card h3{
+    color:#061a40;
+
+    margin-bottom:10px;
+}
+
+.why-card p{
+    color:#6c7a8d;
+
+    line-height:1.7;
+}
+
+.why-card ul{
+    list-style:none;
+
+    text-align:left;
+
+    margin-top:12px;
+}
+
+.why-card ul li{
+    color:#617088;
+
+    padding:6px 0;
+
+    font-size:14px;
+}
+
+.why-card ul li i{
+    font-size:13px;
+
+    margin:0 7px 0 0;
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats{
+    background:#061a40;
+
+    color:#fff;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.stats-grid{
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+}
+
+.stat{
+    text-align:center;
+
+    padding:25px 15px;
+
+    transition:.4s;
+}
+
+.stat:hover{
+    transform:translateY(-8px);
+}
+
+.stat i{
+    font-size:30px;
+
+    color:#56b4ff;
+
+    margin-bottom:10px;
+}
+
+.stat h3{
+    font-size:38px;
+
+    margin-bottom:5px;
+}
+
+.stat p{
+    color:#cbdaf0;
+}
+
+
+/* =========================================================
+   COURSES
+========================================================= */
+
+.courses{
+    background:#fff;
+}
+
+.course-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:22px;
+}
+
+.course-card{
+    background:#fff;
+
+    border-radius:17px;
+
+    padding:25px;
+
+    border:1px solid #e3ebf5;
+
+    box-shadow:
+        0 7px 20px rgba(6,26,64,.06);
+
+    transition:.4s;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.course-card::before{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:100%;
+    height:4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #168cff,
+            #56b4ff
+        );
+
+    transform:scaleX(0);
+
+    transform-origin:left;
+
+    transition:.4s;
+}
+
+.course-card:hover::before{
+    transform:scaleX(1);
+}
+
+.course-card:hover{
+    transform:translateY(-8px);
+
+    box-shadow:
+        0 18px 40px rgba(6,26,64,.14);
+}
+
+.course-icon{
+    width:58px;
+    height:58px;
+
+    border-radius:14px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:#e9f5ff;
+
+    color:#168cff;
+
+    font-size:25px;
+
+    margin-bottom:17px;
+
+    transition:.4s;
+}
+
+.course-card:hover .course-icon{
+    transform:
+        rotate(8deg)
+        scale(1.08);
+
+    background:#168cff;
+
+    color:#fff;
+
+    box-shadow:
+        0 10px 25px rgba(22,140,255,.25);
+}
+
+.course-card h3{
+    color:#061a40;
+
+    margin-bottom:10px;
+
+    min-height:40px;
+}
+
+.course-card p{
+    color:#6b788c;
+
+    line-height:1.6;
+
+    font-size:14px;
+
+    min-height:67px;
+}
+
+.course-duration{
+    margin-top:16px;
+
+    padding:10px 12px;
+
+    border-radius:8px;
+
+    background:#f0f7ff;
+
+    border:1px solid #dcecff;
+
+    color:#168cff;
+
+    font-weight:bold;
+
+    font-size:13px;
+
+    text-align:center;
+}
+
+.course-duration i{
+    margin-right:5px;
+}
+
+
+/* =========================================================
+   CEO
+========================================================= */
+
+.principal{
+    background:#f7faff;
+}
+
+.principal-card{
+    max-width:500px;
+
+    margin:auto;
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    text-align:center;
+
+    box-shadow:
+        0 10px 35px rgba(6,26,64,.10);
+
+    transition:.4s;
+}
+
+.principal-card:hover{
+    transform:translateY(-7px);
+
+    box-shadow:
+        0 18px 45px rgba(6,26,64,.16);
+}
+
+.principal-card img{
+    width:170px;
+    height:170px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:5px solid #e8f5ff;
+
+    margin-bottom:18px;
+}
+
+.principal-card h3{
+    color:#061a40;
+
+    font-size:25px;
+
+    margin-bottom:5px;
+}
+
+.principal-card p{
+    color:#69788d;
+
+    line-height:1.7;
+}
+
+
+/* =========================================================
+   TEACHERS
+========================================================= */
+
+.teacher-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:30px;
+
+    max-width:1000px;
+
+    margin:auto;
+}
+
+.teacher-card{
+    background:#fff;
+
+    border:1px solid #e2eaf4;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:22px;
+
+    box-shadow:
+        0 8px 25px rgba(6,26,64,.07);
+
+    transition:.4s;
+}
+
+.teacher-card:hover{
+    transform:translateY(-7px);
+
+    box-shadow:
+        0 18px 40px rgba(6,26,64,.14);
+}
+
+.teacher-card img{
+    width:125px;
+    height:125px;
+
+    flex-shrink:0;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    cursor:pointer;
+
+    border:4px solid #e8f5ff;
+
+    transition:.4s;
+}
+
+
+.teacher-avatar-icon{
+    width:125px;
+    height:125px;
+    flex-shrink:0;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(135deg,#e8f5ff,#f7fbff);
+    border:4px solid #e8f5ff;
+    color:#168cff;
+    font-size:58px;
+    box-shadow:0 8px 22px rgba(86,180,255,.18);
+    transition:.4s;
+}
+
+.teacher-card:hover .teacher-avatar-icon{
+    transform:scale(1.08);
+    box-shadow:0 0 25px rgba(86,180,255,.45);
+}
+
+.teacher-card img:hover{
+    transform:scale(1.08);
+
+    box-shadow:
+        0 0 25px rgba(86,180,255,.45);
+}
+
+.teacher-card h3{
+    color:#061a40;
+
+    margin-bottom:7px;
+
+    font-size:21px;
+}
+
+.teacher-card .teacher-role{
+    color:#168cff;
+
+    font-weight:bold;
+
+    font-size:14px;
+
+    margin-bottom:8px;
+}
+
+.teacher-card p{
+    color:#69788d;
+
+    line-height:1.6;
+
+    font-size:14px;
+}
+
+.experience{
+    display:inline-block;
+
+    margin-top:10px;
+
+    padding:6px 10px;
+
+    background:#edf7ff;
+
+    color:#168cff;
+
+    border-radius:20px;
+
+    font-size:12px;
+
+    font-weight:bold;
+}
+
+
+/* =========================================================
+   SUCCESS STORIES
+========================================================= */
+
+.success-section{
+    background:#061a40;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.success-section .section-title h2{
+    color:#fff;
+}
+
+.success-section .section-title p{
+    color:#cbdaf0;
+}
+
+.success-launch-box{
+    max-width:750px;
+
+    margin:auto;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(86,180,255,.14),
+            rgba(255,255,255,.05)
+        );
+
+    border:1px solid rgba(86,180,255,.30);
+
+    border-radius:22px;
+
+    padding:40px 25px;
+
+    text-align:center;
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.20);
+
+    transition:.4s;
+}
+
+.success-launch-box:hover{
+    transform:translateY(-6px);
+
+    box-shadow:
+        0 20px 55px rgba(0,0,0,.28);
+}
+
+.success-launch-icon{
+    width:85px;
+    height:85px;
+
+    margin:0 auto 20px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:#168cff;
+
+    color:#fff;
+
+    font-size:36px;
+
+    box-shadow:
+        0 0 30px rgba(86,180,255,.35);
+
+    animation:successGlow 2.5s ease-in-out infinite;
+}
+
+.success-launch-box h3{
+    color:#fff;
+
+    font-size:27px;
+
+    margin-bottom:12px;
+}
+
+.success-launch-box p{
+    color:#cbdaf0;
+
+    line-height:1.7;
+
+    margin-bottom:22px;
+}
+
+.success-view-btn{
+    border:none;
+
+    cursor:pointer;
+
+    background:#56b4ff;
+
+    color:#061a40;
+
+    padding:13px 24px;
+
+    border-radius:9px;
+
+    font-weight:bold;
+
+    font-size:15px;
+
+    transition:.35s;
+}
+
+.success-view-btn:hover{
+    transform:translateY(-4px) scale(1.03);
+
+    background:#fff;
+
+    box-shadow:
+        0 10px 30px rgba(86,180,255,.25);
+}
+
+
+/* =========================================================
+   SUCCESS STORIES FULLSCREEN GALLERY
+========================================================= */
+
+.success-modal{
+    position:fixed;
+
+    inset:0;
+
+    z-index:6000;
+
+    background:
+        rgba(3,19,46,.97);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.35s;
+
+    overflow-y:auto;
+
+    padding:75px 25px 35px;
+}
+
+.success-modal.active{
+    opacity:1;
+
+    visibility:visible;
+}
+
+.success-modal-header{
+    max-width:1200px;
+
+    margin:0 auto 25px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+}
+
+.success-modal-header h2{
+    color:#fff;
+
+    font-size:30px;
+}
+
+.success-close{
+    width:45px;
+    height:45px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    color:#061a40;
+
+    cursor:pointer;
+
+    font-size:20px;
+
+    transition:.3s;
+}
+
+.success-close:hover{
+    transform:rotate(90deg) scale(1.08);
+
+    background:#56b4ff;
+}
+
+.success-gallery-grid{
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:18px;
+}
+
+.success-thumb{
+    height:230px;
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+    background:#0b2d66;
+
+    border:1px solid rgba(86,180,255,.25);
+
+    cursor:pointer;
+
+    transition:.4s;
+}
+
+.success-thumb:hover{
+    transform:translateY(-6px) scale(1.02);
+
+    box-shadow:
+        0 15px 35px rgba(86,180,255,.18);
+}
+
+.success-thumb img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.5s;
+}
+
+.success-thumb:hover img{
+    transform:scale(1.06);
+}
+
+
+/* =========================================================
+   ADMISSION
+========================================================= */
+
+.admission{
+    background:#f7faff;
+}
+
+.form-box{
+    max-width:900px;
+
+    margin:auto;
+
+    background:#fff;
+
+    padding:35px;
+
+    border-radius:18px;
+
+    box-shadow:
+        0 10px 35px rgba(6,26,64,.09);
+}
+
+.form-grid{
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:18px;
+}
+
+.form-group{
+    margin-bottom:5px;
+}
+
+.form-group.full{
+    grid-column:1/-1;
+}
+
+.form-group label{
+    display:block;
+
+    font-weight:bold;
+
+    color:#061a40;
+
+    margin-bottom:7px;
+
+    font-size:14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+
+    padding:12px 13px;
+
+    border:1px solid #d6e0ec;
+
+    border-radius:8px;
+
+    outline:none;
+
+    transition:.3s;
+}
+
+.form-group textarea{
+    min-height:100px;
+
+    resize:vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+    border-color:#56b4ff;
+
+    box-shadow:
+        0 0 0 4px rgba(86,180,255,.12);
+}
+
+.gender-box{
+    display:flex;
+
+    gap:20px;
+
+    padding-top:8px;
+}
+
+.gender-box label{
+    font-weight:normal;
+
+    display:flex;
+
+    gap:6px;
+
+    align-items:center;
+}
+
+.submit-btn{
+    width:100%;
+
+    border:none;
+
+    cursor:pointer;
+
+    background:#168cff;
+
+    color:#fff;
+
+    font-size:16px;
+
+    padding:14px;
+
+    border-radius:9px;
+
+    font-weight:bold;
+
+    margin-top:10px;
+
+    transition:.35s;
+}
+
+.submit-btn:hover{
+    background:#061a40;
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(6,26,64,.20);
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact{
+    background:#061a40;
+
+    color:#fff;
+}
+
+.contact-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:25px;
+}
+
+.contact-card{
+    padding:28px 20px;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.09);
+
+    text-align:center;
+
+    transition:.4s;
+}
+
+.contact-card:hover{
+    transform:translateY(-7px);
+
+    background:rgba(86,180,255,.09);
+}
+
+.contact-icon{
+    width:65px;
+    height:65px;
+
+    margin:0 auto 15px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(86,180,255,.12);
+
+    border:1px solid rgba(86,180,255,.35);
+
+    color:#56b4ff;
+
+    font-size:25px;
+
+    animation:contactLight 2.2s ease-in-out infinite;
+
+    transition:.35s;
+}
+
+.contact-card:hover .contact-icon{
+    transform:scale(1.12);
+
+    color:#fff;
+
+    background:#168cff;
+
+    box-shadow:
+        0 0 12px rgba(86,180,255,.8),
+        0 0 30px rgba(86,180,255,.6),
+        0 0 55px rgba(86,180,255,.35);
+}
+
+.contact-card h3{
+    margin-bottom:8px;
+}
+
+.contact-card p{
+    color:#c8d8ec;
+
+    line-height:1.6;
+
+    font-size:14px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    background:#03132e;
+
+    color:#fff;
+
+    text-align:center;
+
+    padding:30px 20px;
+}
+
+.footer-social{
+    display:flex;
+
+    justify-content:center;
+
+    gap:12px;
+
+    margin-bottom:18px;
+}
+
+.footer-social a{
+    width:42px;
+    height:42px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    transition:.35s;
+}
+
+.footer-social a:hover{
+    background:#56b4ff;
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 0 20px rgba(86,180,255,.6);
+}
+
+footer p{
+    color:#aabbd0;
+
+    font-size:13px;
+}
+
+
+/* =========================================================
+   WHATSAPP
+========================================================= */
+
+.whatsapp-float{
+    position:fixed;
+
+    right:22px;
+    bottom:22px;
+
+    width:58px;
+    height:58px;
+
+    border-radius:50%;
+
+    background:#25d366;
+
+    color:#fff;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:29px;
+
+    text-decoration:none;
+
+    z-index:999;
+
+    box-shadow:
+        0 5px 25px rgba(37,211,102,.35);
+
+    animation:whatsappPulse 2s infinite;
+}
+
+
+
+/* =========================================================
+   ADVANCED COURSE DURATION
+========================================================= */
+
+const admissionCourse = document.getElementById("course");
+const admissionDuration = document.getElementById("duration");
+
+if(admissionCourse && admissionDuration){
+
+    admissionCourse.addEventListener("change", function(){
+
+        const advancedCourses = [
+            "Web Development",
+            "Freelancing",
+            "E-Commerce",
+            "Digital Marketing"
+        ];
+
+        const isAdvanced = advancedCourses.includes(this.value);
+
+        Array.from(admissionDuration.options).forEach(option => {
+
+            if(option.value === "1 Year"){
+                option.selected = isAdvanced;
+            }
+
+            if(
+                option.value === "3 Months" ||
+                option.value === "6 Months"
+            ){
+                option.disabled = isAdvanced;
+            }
+
+        });
+
+        if(!isAdvanced){
+            Array.from(admissionDuration.options).forEach(option => {
+                option.disabled = false;
+            });
+        }
+
+    });
+
+}
+
+
+/* =========================================================
+   SCROLL TOP
+========================================================= */
+
+.scroll-top{
+    position:fixed;
+
+    right:22px;
+    bottom:92px;
+
+    width:43px;
+    height:43px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#168cff;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    z-index:998;
+}
+
+
+/* =========================================================
+   IMAGE MODAL
+========================================================= */
+
+.image-modal{
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.94);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:80px 30px 30px;
+
+    z-index:7000;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.35s;
+
+    overflow:hidden;
+}
+
+.image-modal.active{
+    opacity:1;
+    visibility:visible;
+}
+
+.modal-content{
+    width:100%;
+    height:100%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    overflow:hidden;
+}
+
+.image-modal img{
+    max-width:90vw;
+    max-height:78vh;
+
+    object-fit:contain;
+
+    border-radius:10px;
+
+    box-shadow:
+        0 0 40px rgba(86,180,255,.25);
+
+    transform:scale(1);
+
+    transition:transform .25s ease;
+
+    user-select:none;
+}
+
+.close-modal{
+    position:absolute;
+
+    top:20px;
+    right:25px;
+
+    width:45px;
+    height:45px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    color:#061a40;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    z-index:2;
+}
+
+.zoom-controls{
+    position:absolute;
+
+    bottom:25px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    gap:10px;
+
+    z-index:3;
+}
+
+.zoom-controls button{
+    width:45px;
+    height:45px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    color:#061a40;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    transition:.3s;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.3);
+}
+
+.zoom-controls button:hover{
+    background:#56b4ff;
+
+    transform:translateY(-3px);
+}
+
+.zoom-level{
+    min-width:65px;
+
+    height:45px;
+
+    padding:0 12px;
+
+    border-radius:25px;
+
+    background:#061a40;
+
+    border:1px solid #56b4ff;
+
+    color:#fff;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:13px;
+
+    font-weight:bold;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes logoPulse{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.05);
+    }
+
+}
+
+@keyframes titleGlow{
+
+    0%,100%{
+        text-shadow:
+            0 0 0 rgba(86,180,255,0);
+    }
+
+    50%{
+        text-shadow:
+            0 0 22px rgba(86,180,255,.22);
+    }
+
+}
+
+@keyframes buildingFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+}
+
+@keyframes floatCircle{
+
+    0%,100%{
+        transform:translate(0,0);
+    }
+
+    50%{
+        transform:translate(-20px,20px);
+    }
+
+}
+
+@keyframes contactLight{
+
+    0%,100%{
+        box-shadow:
+            0 0 0 rgba(86,180,255,0);
+    }
+
+    50%{
+        box-shadow:
+            0 0 12px rgba(86,180,255,.55),
+            0 0 28px rgba(86,180,255,.28);
+    }
+
+}
+
+@keyframes whatsappPulse{
+
+    0%{
+        box-shadow:
+            0 0 0 0 rgba(37,211,102,.45);
+    }
+
+    70%{
+        box-shadow:
+            0 0 0 18px rgba(37,211,102,0);
+    }
+
+    100%{
+        box-shadow:
+            0 0 0 0 rgba(37,211,102,0);
+    }
+
+}
+
+@keyframes successGlow{
+
+    0%,100%{
+        transform:scale(1);
+
+        box-shadow:
+            0 0 20px rgba(86,180,255,.25);
+    }
+
+    50%{
+        transform:scale(1.06);
+
+        box-shadow:
+            0 0 35px rgba(86,180,255,.55);
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE 1100
+========================================================= */
+
+@media(max-width:1100px){
+
+    .nav-links > li > a{
+        padding:10px 6px;
+        font-size:12px;
+    }
+
+    .header-social{
+        gap:5px;
+    }
+
+    .header-social a{
+        width:33px;
+        height:33px;
+    }
+
+    .course-grid{
+        grid-template-columns:
+            repeat(3,1fr);
+    }
+
+    .success-gallery-grid{
+        grid-template-columns:
+            repeat(3,1fr);
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE 850
+========================================================= */
+
+@media(max-width:850px){
+
+    .navbar{
+        min-height:70px;
+        padding:8px 15px;
+    }
+
+    .menu-btn{
+        display:block;
+
+        margin-left:0;
+
+        order:4;
+    }
+
+    .header-social{
+        margin-left:auto;
+
+        order:3;
+    }
+
+    .nav-links{
+        position:absolute;
+
+        left:0;
+        right:0;
+
+        top:70px;
+
+        background:#061a40;
+
+        display:none;
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        padding:10px 15px 18px;
+
+        box-shadow:
+            0 15px 25px rgba(0,0,0,.25);
+
+        margin-left:0;
+
+        max-height:80vh;
+
+        overflow-y:auto;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .nav-links > li > a{
+        justify-content:space-between;
+
+        padding:12px;
+    }
+
+    /* MAIN DROPDOWN MOBILE */
+
+    .dropdown-menu{
+        position:static;
+
+        width:100%;
+
+        display:none;
+
+        opacity:1;
+        visibility:visible;
+
+        transform:none;
+
+        box-shadow:none;
+
+        border-radius:8px;
+
+        margin-top:3px;
+    }
+
+    .dropdown.active > .dropdown-menu{
+        display:block;
+    }
+
+    /* NESTED DROPDOWN MOBILE */
+
+    .sub-menu{
+        position:static;
+
+        width:100%;
+
+        display:none;
+
+        opacity:1;
+        visibility:visible;
+
+        transform:none;
+
+        box-shadow:none;
+
+        border-radius:8px;
+
+        background:#092451;
+
+        margin-top:3px;
+
+        padding:5px;
+    }
+
+    .has-submenu.active > .sub-menu{
+        display:block;
+    }
+
+    .has-submenu > a{
+        cursor:pointer;
+    }
+
+    .hero{
+        min-height:600px;
+    }
+
+    .hero-image{
+        right:-70px;
+
+        width:75%;
+
+        opacity:.85;
+    }
+
+    .hero-image img{
+        opacity:.09;
+    }
+
+    .hero-content h1{
+        font-size:43px;
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .about-image{
+        position:static;
+    }
+
+    .stats-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .course-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .why-grid{
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .teacher-grid{
+        grid-template-columns:1fr;
+    }
+
+    .success-gallery-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+
+        max-width:600px;
+
+        margin:auto;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE 600
+========================================================= */
+
+@media(max-width:600px){
+
+    section{
+        padding:
+            65px 16px;
+    }
+
+    .logo img{
+        width:46px;
+        height:46px;
+    }
+
+    .logo-text strong{
+        font-size:15px;
+    }
+
+    .logo-text span{
+        font-size:9px;
+    }
+
+    .header-social{
+        gap:4px;
+
+        margin-right:4px;
+    }
+
+    .header-social a{
+        width:30px;
+        height:30px;
+
+        font-size:12px;
+    }
+
+    .menu-btn{
+        font-size:22px;
+    }
+
+    .hero{
+        min-height:570px;
+    }
+
+    .hero-content{
+        padding:
+            65px 20px;
+    }
+
+    .hero-content h1{
+        font-size:36px;
+    }
+
+    .hero-content p{
+        font-size:16px;
+    }
+
+    .hero-image{
+        right:-90px;
+
+        width:95%;
+
+        height:500px;
+    }
+
+    .hero-image img{
+        opacity:.075;
+    }
+
+    .section-title h2{
+        font-size:30px;
+    }
+
+    .course-grid{
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:12px;
+    }
+
+    .course-card{
+        padding:17px;
+    }
+
+    .course-card h3{
+        font-size:16px;
+    }
+
+    .course-card p{
+        font-size:12px;
+
+        min-height:82px;
+    }
+
+    .course-icon{
+        width:45px;
+        height:45px;
+
+        font-size:20px;
+    }
+
+    .course-duration{
+        font-size:11px;
+
+        padding:8px 4px;
+    }
+
+    .teacher-card{
+        padding:18px;
+
+        gap:15px;
+    }
+
+    .teacher-card img{
+        width:95px;
+        height:95px;
+    }
+
+    .about-special-box{
+        padding:20px;
+    }
+
+    .about-special-box h4{
+        font-size:19px;
+    }
+
+    .success-modal{
+        padding:
+            70px 14px 25px;
+    }
+
+    .success-modal-header h2{
+        font-size:22px;
+    }
+
+    .success-gallery-grid{
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:10px;
+    }
+
+    .success-thumb{
+        height:160px;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .form-group.full{
+        grid-column:auto;
+    }
+
+    .form-box{
+        padding:22px;
+    }
+
+    .why-grid{
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:12px;
+    }
+
+    .why-card{
+        padding:20px 12px;
+    }
+
+    .why-card i{
+        font-size:27px;
+    }
+
+    .why-card h3{
+        font-size:16px;
+    }
+
+    .why-card p,
+    .why-card ul li{
+        font-size:12px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE 420
+========================================================= */
+
+@media(max-width:420px){
+
+    .navbar{
+        padding-left:10px;
+        padding-right:10px;
+
+        gap:5px;
+    }
+
+    .logo-text{
+        display:none;
+    }
+
+    .header-social{
+        gap:3px;
+
+        margin-right:1px;
+    }
+
+    .header-social a{
+        width:28px;
+        height:28px;
+
+        font-size:11px;
+    }
+
+    .menu-btn{
+        font-size:20px;
+    }
+
+    .hero-content h1{
+        font-size:32px;
+    }
+
+    .hero-buttons{
+        gap:9px;
+    }
+
+    .btn{
+        padding:
+            12px 16px;
+
+        font-size:13px;
+    }
+
+    .course-grid{
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .course-card{
+        padding:
+            14px 10px;
+    }
+
+    .course-card h3{
+        font-size:14px;
+    }
+
+    .course-card p{
+        font-size:11px;
+
+        min-height:90px;
+    }
+
+    .course-duration{
+        font-size:10px;
+    }
+
+    .teacher-card{
+        align-items:flex-start;
+    }
+
+    .teacher-card img,
+    .teacher-avatar-icon{
+        width:82px;
+        height:82px;
+    }
+
+    .teacher-avatar-icon{
+        font-size:38px;
+    }
+
+    .teacher-card h3{
+        font-size:16px;
+    }
+
+    .teacher-card p{
+        font-size:11px;
+    }
+
+    .success-thumb{
+        height:135px;
+    }
+
+    .zoom-controls{
+        bottom:18px;
+    }
+
+    .zoom-controls button{
+        width:40px;
+        height:40px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        scroll-behavior:auto !important;
+        transition-duration:.01ms !important;
+    }
+
+}
+
+
+/* =========================================================
+   PREMIUM MOTION UPGRADE
+========================================================= */
+:root{--motion-blue:#56b4ff;--motion-blue2:#168cff;--motion-dark:#061a40}
+body{background:#fff}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:0;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(86,180,255,.06),transparent 28%);transition:opacity .4s}
+body.motion-ready::before{opacity:1}
+
+/* premium page loader */
+#premiumLoader{position:fixed;inset:0;background:#061a40;z-index:10000;display:flex;align-items:center;justify-content:center;transition:opacity .7s,visibility .7s}
+#premiumLoader.hide{opacity:0;visibility:hidden}
+.loader-core{text-align:center;color:#fff}
+.loader-ring{width:76px;height:76px;border:3px solid rgba(255,255,255,.12);border-top-color:#56b4ff;border-right-color:#168cff;border-radius:50%;margin:auto;animation:loaderSpin 1s linear infinite;box-shadow:0 0 35px rgba(86,180,255,.25)}
+.loader-core strong{display:block;margin-top:18px;font-size:15px;letter-spacing:2px}.loader-core span{display:block;margin-top:5px;font-size:10px;color:#8ed2ff;letter-spacing:3px}
+
+/* animated hero canvas */
+#motionCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.65}
+.hero{isolation:isolate;background:radial-gradient(circle at 75% 45%,rgba(22,140,255,.18),transparent 28%),linear-gradient(125deg,#020d25,#061a40 48%,#08275a)}
+.hero::before{width:520px;height:520px;background:radial-gradient(circle,rgba(86,180,255,.18),transparent 65%);filter:blur(8px);right:-160px;top:-180px;z-index:1}
+.hero::after{width:420px;height:420px;background:radial-gradient(circle,rgba(22,140,255,.13),transparent 65%);filter:blur(8px);left:-170px;bottom:-170px;z-index:1}
+.hero-content{z-index:5}
+.hero-content h1{animation:heroTitleIn 1.1s cubic-bezier(.2,.8,.2,1) both,titleGlow 3s ease-in-out 1.2s infinite}
+.hero-content p{animation:heroTextIn 1s .25s cubic-bezier(.2,.8,.2,1) both}
+.hero-buttons{animation:heroTextIn 1s .4s cubic-bezier(.2,.8,.2,1) both}
+.hero-image{z-index:2;animation:heroImageFloat 7s ease-in-out infinite}
+.hero-image img{opacity:.18;filter:brightness(1.35) contrast(.8) saturate(.8) drop-shadow(0 15px 45px rgba(86,180,255,.22));animation:buildingFloat 6s ease-in-out infinite,buildingGlow 4s ease-in-out infinite alternate}
+
+/* animated grid */
+.hero .motion-grid{position:absolute;inset:0;z-index:1;pointer-events:none;background-image:linear-gradient(rgba(86,180,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(86,180,255,.045) 1px,transparent 1px);background-size:55px 55px;mask-image:linear-gradient(to bottom,transparent,black 25%,black 75%,transparent);animation:gridMove 18s linear infinite}
+
+/* nav glass + shine */
+header{background:rgba(3,18,45,.82);border-bottom:1px solid rgba(86,180,255,.12)}
+.nav-links>li>a{position:relative;overflow:hidden}.nav-links>li>a::after{content:"";position:absolute;left:-110%;bottom:0;width:80%;height:2px;background:linear-gradient(90deg,transparent,#56b4ff,transparent);transition:.45s}.nav-links>li>a:hover::after{left:110%}
+.logo img{animation:logoPulse 3s ease-in-out infinite,logoFloat 5s ease-in-out infinite}
+
+/* section heading reveal underline */
+.section-title h2{position:relative;display:inline-block}.section-title h2::after{content:"";display:block;width:58px;height:3px;margin:12px auto 0;border-radius:10px;background:linear-gradient(90deg,#168cff,#56b4ff);transform:scaleX(.2);transform-origin:center;transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+.section-title.in-view h2::after{transform:scaleX(1)}
+
+/* cards 3D polish */
+.course-card,.why-card,.teacher-card,.principal-card,.contact-card,.about-special-box,.success-launch-box{will-change:transform;transform-style:preserve-3d}
+.course-card::after,.why-card::after,.teacher-card::after,.principal-card::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(120deg,transparent 20%,rgba(255,255,255,.45),transparent 55%);transform:translateX(-120%);transition:transform .7s}
+.course-card:hover::after,.why-card:hover::after,.teacher-card:hover::after,.principal-card:hover::after{transform:translateX(120%)}
+.course-card:hover,.why-card:hover,.teacher-card:hover,.principal-card:hover{box-shadow:0 22px 50px rgba(6,26,64,.16)}
+
+/* stats animated light */
+.stats::before{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-130px;top:50%;background:rgba(86,180,255,.08);filter:blur(20px);animation:floatCircle 8s ease-in-out infinite}
+.stat h3{font-variant-numeric:tabular-nums;text-shadow:0 0 18px rgba(86,180,255,.18)}
+
+/* buttons shine */
+.btn,.submit-btn,.success-view-btn{position:relative;overflow:hidden}
+.btn::after,.submit-btn::after,.success-view-btn::after{content:"";position:absolute;top:-120%;left:-35%;width:28%;height:340%;background:rgba(255,255,255,.32);transform:rotate(25deg);transition:left .7s ease}.btn:hover::after,.submit-btn:hover::after,.success-view-btn:hover::after{left:125%}
+
+/* floating WhatsApp */
+.whatsapp-float{transition:.35s}.whatsapp-float:hover{transform:translateY(-7px) scale(1.08)}
+
+/* reveal states */
+.motion-reveal{opacity:0;transform:translateY(45px) scale(.985);transition:opacity .85s cubic-bezier(.2,.8,.2,1),transform .85s cubic-bezier(.2,.8,.2,1)}
+.motion-reveal.from-left{transform:translateX(-55px)}.motion-reveal.from-right{transform:translateX(55px)}.motion-reveal.visible{opacity:1;transform:none}
+
+/* elegant scroll progress */
+#scrollProgress{position:fixed;left:0;top:0;height:3px;width:0;background:linear-gradient(90deg,#168cff,#56b4ff,#fff);z-index:11000;box-shadow:0 0 12px rgba(86,180,255,.8)}
+
+@keyframes loaderSpin{to{transform:rotate(360deg)}}
+@keyframes heroTitleIn{from{opacity:0;transform:translateY(35px) scale(.97);filter:blur(8px)}to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes heroTextIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes heroImageFloat{0%,100%{transform:translateY(-50%) translateX(0)}50%{transform:translateY(calc(-50% - 12px)) translateX(-8px)}}
+@keyframes buildingGlow{from{filter:brightness(1.2) contrast(.75) drop-shadow(0 10px 25px rgba(86,180,255,.08))}to{filter:brightness(1.5) contrast(.85) drop-shadow(0 15px 50px rgba(86,180,255,.28))}}
+@keyframes gridMove{from{transform:translateY(0)}to{transform:translateY(55px)}}
+@keyframes logoFloat{0%,100%{margin-top:0}50%{margin-top:-3px}}
+
+@media(max-width:850px){#motionCanvas{opacity:.4}.hero .motion-grid{background-size:38px 38px}.hero-image img{opacity:.12}.motion-reveal{transform:translateY(28px)}.motion-reveal.from-left,.motion-reveal.from-right{transform:translateY(28px)} }
+@media(prefers-reduced-motion:reduce){#premiumLoader{display:none}#motionCanvas,.hero .motion-grid{display:none}body::before{display:none}.motion-reveal{opacity:1!important;transform:none!important;transition:none!important}}
+
+</style>
+
+<style>
+.teacher-avatar-icon .zoomable-teacher-image{width:100%;height:100%;object-fit:cover;border-radius:50%;cursor:zoom-in;transition:transform .25s ease,filter .25s ease}.teacher-avatar-icon .zoomable-teacher-image:hover{transform:scale(1.04);filter:brightness(1.08)}
+.teacher-image-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:99999;align-items:center;justify-content:center;padding:30px}.teacher-image-modal.active{display:flex}.teacher-image-modal img{max-width:90vw;max-height:82vh;object-fit:contain;border-radius:12px;box-shadow:0 0 35px rgba(255,255,255,.18);transform:scale(1);transition:transform .2s ease;cursor:zoom-in}.teacher-image-modal .zoom-controls{position:absolute;bottom:25px;display:flex;gap:10px}.teacher-image-modal button{border:0;border-radius:50%;width:48px;height:48px;font-size:20px;cursor:pointer;background:#fff;color:#061a40;font-weight:bold}.teacher-image-modal .close-btn{position:absolute;right:25px;top:20px;border-radius:10px;width:48px;height:48px}.teacher-image-modal .caption{position:absolute;top:22px;left:25px;color:#fff;font-weight:600;font-size:16px}
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header>
+
+<nav class="navbar">
+
+
+<!-- LOGO -->
+
+<a href="#home"
+   class="logo">
+
+    <img src="logo.png"
+         alt="IT Computer College Zafarwal Logo">
+
+    <div class="logo-text">
+
+        <strong>
+            IT Computer College
+        </strong>
+
+        <span>
+            ZAFARWAL
+        </span>
+
+    </div>
+
+</a>
+
+
+<!-- NAVIGATION -->
+
+<ul class="nav-links"
+    id="navLinks">
+
+
+    <li>
+        <a href="#home">
+            Home
+        </a>
+    </li>
+
+
+    <li>
+        <a href="#about">
+            About
+        </a>
+    </li>
+
+
+    <!-- COURSES -->
+
+    <li class="dropdown">
+
+        <a href="javascript:void(0)"
+           onclick="toggleDropdown(event)">
+
+            Courses
+
+            <i class="fas fa-chevron-down"></i>
+
+        </a>
+
+
+        <ul class="dropdown-menu">
+
+
+            <li>
+                <a href="#courses">
+                    <i class="fas fa-desktop"></i>
+                    Computer Course
+                </a>
+            </li>
+
+
+            <li>
+                <a href="#courses">
+                    <i class="fas fa-code"></i>
+                    Web Development
+                </a>
+            </li>
+
+
+            <li>
+                <a href="#courses">
+                    <i class="fas fa-language"></i>
+                    Spoken English
+                </a>
+            </li>
+
+
+            <!-- GRAPHIC DESIGNING NESTED -->
+
+            <li class="has-submenu">
+
+                <a href="javascript:void(0)"
+                   onclick="toggleSubmenu(event)">
+
+                    <span>
+                        <i class="fas fa-pen-nib"></i>
+                        Graphic Designing
+                    </span>
+
+                    <i class="fas fa-chevron-right right-arrow"></i>
+
+                </a>
+
+
+                <ul class="sub-menu">
+                    <li><a href="#courses"><i class="fas fa-pen-nib"></i> CorelDRAW</a></li>
+                    <li><a href="#courses"><i class="fas fa-image"></i> Adobe Photoshop</a></li>
+                    <li><a href="#courses"><i class="fas fa-palette"></i> Canva</a></li>
+                    <li><a href="#courses"><i class="fas fa-video"></i> Video Editing</a></li>
+                    <li><a href="#courses"><i class="fas fa-bezier-curve"></i> Figma</a></li>
+                    <li><a href="#courses"><i class="fas fa-wand-magic-sparkles"></i> Prompt Engineering</a></li>
+                </ul>
+
+            </li>
+
+
+            <!-- OFFICE MANAGEMENT NESTED -->
+
+            <li class="has-submenu">
+
+                <a href="javascript:void(0)"
+                   onclick="toggleSubmenu(event)">
+
+                    <span>
+                        <i class="fas fa-briefcase"></i>
+                        Office Management
+                    </span>
+
+                    <i class="fas fa-chevron-right right-arrow"></i>
+
+                </a>
+
+
+                <ul class="sub-menu">
+
+
+                    <li>
+                        <a href="#courses">
+                            <i class="fas fa-computer"></i>
+                            Basic Computer
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="#courses">
+                            <i class="fas fa-file-word"></i>
+                            MS Word
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="#courses">
+                            <i class="fas fa-file-excel"></i>
+                            MS Excel
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="#courses">
+                            <i class="fas fa-file-lines"></i>
+                            InPage
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="#courses">
+                            <i class="fas fa-file-powerpoint"></i>
+                            PowerPoint
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="#courses">
+                            <i class="fas fa-download"></i>
+                            Software Installation
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="#courses">
+                            <i class="fas fa-globe"></i>
+                            Internet Browsing
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="#courses">
+                            <i class="fas fa-keyboard"></i>
+                            Typing Master
+                        </a>
+                    </li>
+
+
+                </ul>
+
+            </li>
+
+
+            <li>
+                <a href="#courses">
+                    <i class="fas fa-bullhorn"></i>
+                    Digital Marketing
+                </a>
+            </li>
+
+
+            <li>
+                <a href="#courses">
+                    <i class="fas fa-laptop"></i>
+                    Freelancing
+                </a>
+            </li>
+
+
+            <li>
+                <a href="#courses">
+                    <i class="fas fa-mobile-screen"></i>
+                    Mobile Repairing
+                </a>
+            </li>
+
+
+            <li>
+                <a href="#courses">
+                    <i class="fas fa-keyboard"></i>
+                    Shorthand / Stenography
+                </a>
+            </li>
+
+
+            <li>
+                <a href="#courses">
+                    <i class="fas fa-spa"></i>
+                    Beautician
+                </a>
+            </li>
+
+
+            <li>
+                <a href="#courses">
+                    <i class="fas fa-chart-line"></i>
+                    Trading & Forex
+                </a>
+            </li>
+
+
+            <li>
+                <a href="#courses">
+                    <i class="fas fa-shirt"></i>
+                    Fashion Designing
+                </a>
+            </li>
+
+
+            <li>
+                <a href="#courses">
+                    <i class="fas fa-scissors"></i>
+                    Dress Making & Stitching
+                </a>
+            </li>
+
+
+        </ul>
+
+    </li>
+
+
+    <!-- ADVANCED COURSES -->
+
+    <li class="dropdown">
+
+        <a href="javascript:void(0)"
+           onclick="toggleDropdown(event)">
+
+            Advanced Courses
+
+            <i class="fas fa-chevron-down"></i>
+
+        </a>
+
+        <ul class="dropdown-menu">
+
+            <!-- WEB DEVELOPMENT -->
+            <li class="has-submenu">
+
+                <a href="javascript:void(0)"
+                   onclick="toggleSubmenu(event)">
+
+                    <span>
+                        <i class="fas fa-code"></i>
+                        Web Development
+                    </span>
+
+                    <i class="fas fa-chevron-right right-arrow"></i>
+
+                </a>
+
+                <ul class="sub-menu">
+
+                    <li><a href="#courses"><i class="fab fa-html5"></i> HTML</a></li>
+                    <li><a href="#courses"><i class="fab fa-css3-alt"></i> CSS</a></li>
+                    <li><a href="#courses"><i class="fab fa-js"></i> JavaScript</a></li>
+                    <li><a href="#courses"><i class="fas fa-bezier-curve"></i> Figma</a></li>
+                    <li><a href="#courses"><i class="fab fa-wordpress"></i> WordPress</a></li>
+
+                </ul>
+
+            </li>
+
+<!-- FREELANCING -->
+            <li class="has-submenu">
+
+                <a href="javascript:void(0)"
+                   onclick="toggleSubmenu(event)">
+
+                    <span>
+                        <i class="fas fa-briefcase"></i>
+                        Freelancing
+                    </span>
+
+                    <i class="fas fa-chevron-right right-arrow"></i>
+
+                </a>
+
+                <ul class="sub-menu">
+
+                    <li><a href="#courses"><i class="fas fa-user-plus"></i> Fiverr Profile Setup</a></li>
+                    <li><a href="#courses"><i class="fas fa-arrow-up-right-from-square"></i> Upwork Profile</a></li>
+                    <li><a href="#courses"><i class="fas fa-id-card"></i> Portfolio Building</a></li>
+                    <li><a href="#courses"><i class="fas fa-file-signature"></i> Gig &amp; Proposal Writing</a></li>
+                    <li><a href="#courses"><i class="fas fa-comments"></i> Client Communication</a></li>
+                    <li><a href="#courses"><i class="fas fa-handshake"></i> Client Dealing</a></li>
+                    <li><a href="#courses"><i class="fas fa-star"></i> Reviews &amp; Profile Growth</a></li>
+                    <li><a href="#courses"><i class="fas fa-money-bill-wave"></i> Online Earning Skills</a></li>
+
+                </ul>
+
+            </li>
+
+            <!-- E-COMMERCE -->
+            <li class="has-submenu">
+
+                <a href="javascript:void(0)"
+                   onclick="toggleSubmenu(event)">
+
+                    <span>
+                        <i class="fas fa-cart-shopping"></i>
+                        E-Commerce
+                    </span>
+
+                    <i class="fas fa-chevron-right right-arrow"></i>
+
+                </a>
+
+                <ul class="sub-menu">
+
+                    <li><a href="#courses"><i class="fab fa-shopify"></i> Shopify Store Setup</a></li>
+                    <li><a href="#courses"><i class="fas fa-store"></i> Daraz Store Basics</a></li>
+                    <li><a href="#courses"><i class="fas fa-box-open"></i> Product Research</a></li>
+                    <li><a href="#courses"><i class="fas fa-list"></i> Product Listing</a></li>
+                    <li><a href="#courses"><i class="fas fa-tags"></i> Pricing &amp; Product Management</a></li>
+                    <li><a href="#courses"><i class="fas fa-truck-fast"></i> Orders &amp; Delivery Management</a></li>
+                    <li><a href="#courses"><i class="fas fa-bullhorn"></i> E-Commerce Marketing</a></li>
+                    <li><a href="#courses"><i class="fas fa-chart-line"></i> Sales &amp; Store Analytics</a></li>
+
+                </ul>
+
+            </li>
+
+            <!-- DIGITAL MARKETING -->
+            <li class="has-submenu">
+
+                <a href="javascript:void(0)"
+                   onclick="toggleSubmenu(event)">
+
+                    <span>
+                        <i class="fas fa-bullhorn"></i>
+                        Digital Marketing
+                    </span>
+
+                    <i class="fas fa-chevron-right right-arrow"></i>
+
+                </a>
+
+                <ul class="sub-menu">
+
+                    <li><a href="#courses"><i class="fas fa-magnifying-glass"></i> SEO</a></li>
+                    <li><a href="#courses"><i class="fab fa-facebook"></i> Social Media Marketing</a></li>
+                    <li><a href="#courses"><i class="fas fa-pen-to-square"></i> Content Marketing</a></li>
+                    <li><a href="#courses"><i class="fas fa-rectangle-ad"></i> Meta / Facebook Ads</a></li>
+                    <li><a href="#courses"><i class="fab fa-google"></i> Google Ads</a></li>
+                    <li><a href="#courses"><i class="fas fa-envelope"></i> Email Marketing</a></li>
+                    <li><a href="#courses"><i class="fas fa-chart-pie"></i> Google Analytics</a></li>
+                    <li><a href="#courses"><i class="fas fa-lightbulb"></i> Digital Strategy</a></li>
+
+                </ul>
+
+            </li>
+
+            <!-- CYBER SECURITY -->
+            <li class="has-submenu">
+                <a href="javascript:void(0)" onclick="toggleSubmenu(event)">
+                    <span><i class="fas fa-shield-halved"></i> Cyber Security</span>
+                    <i class="fas fa-chevron-right right-arrow"></i>
+                </a>
+                <ul class="sub-menu">
+                    <li><a href="#courses"><i class="fas fa-shield"></i> Cyber Security Basics</a></li>
+                    <li><a href="#courses"><i class="fas fa-network-wired"></i> Network Security</a></li>
+                    <li><a href="#courses"><i class="fas fa-lock"></i> Ethical Hacking Basics</a></li>
+                    <li><a href="#courses"><i class="fas fa-bug"></i> Malware &amp; Threat Awareness</a></li>
+                    <li><a href="#courses"><i class="fas fa-user-shield"></i> Online Safety</a></li>
+                </ul>
+            </li>
+
+            <!-- PROGRAM DURATION -->
+            <li>
+                <a href="#courses">
+                    <i class="fas fa-clock"></i>
+                    All Advanced Programs — 1 Year
+                </a>
+            </li>
+
+        </ul>
+
+    </li>
+
+
+    <li>
+        <a href="#teachers">
+            Teachers
+        </a>
+    </li>
+
+
+    <!-- SUCCESS STORIES -->
+
+    <li>
+
+        <a href="javascript:void(0)"
+           onclick="openSuccessGallery()">
+
+            <i class="fas fa-trophy"></i>
+
+            Success Stories
+
+        </a>
+
+    </li>
+
+
+    <!-- GALLERY -->
+
+    <li>
+
+        <a href="Gallery/gallery.html">
+
+            <i class="fas fa-images"></i>
+
+            Gallery
+
+        </a>
+
+    </li>
+
+
+    <li>
+
+        <a href="#admission">
+            Admission
+        </a>
+
+    </li>
+
+
+    <li>
+
+        <a href="#contact">
+            Contact
+        </a>
+
+    </li>
+
+
+</ul>
+
+
+<!-- SOCIAL ICONS -->
+
+<div class="header-social">
+
+
+    <a href="https://www.youtube.com/@Itcomputercollege"
+       target="_blank"
+       aria-label="YouTube">
+
+        <i class="fab fa-youtube"></i>
+
+    </a>
+
+
+    <a href="https://www.facebook.com/i.tcomputercollege"
+       target="_blank"
+       aria-label="Facebook">
+
+        <i class="fab fa-facebook-f"></i>
+
+    </a>
+
+
+    <a href="https://wa.me/923348244340"
+       target="_blank"
+       aria-label="WhatsApp">
+
+        <i class="fab fa-whatsapp"></i>
+
+    </a>
+
+
+    <a href="https://www.tiktok.com/@itcomputercollegezwl?_r=1&_t=ZS-9AO4T7QHT0L"
+       target="_blank"
+       aria-label="TikTok">
+
+        <i class="fab fa-tiktok"></i>
+
+    </a>
+
+
+</div>
+
+
+<!-- MOBILE MENU -->
+
+<div class="menu-btn"
+     onclick="toggleMenu()">
+
+    <i class="fas fa-bars"></i>
+
+</div>
+
+
+</nav>
+
+</header>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero"
+         id="home">
+
+
+    <div class="hero-image">
+
+        <img src="building.png"
+             alt="IT Computer College Zafarwal Building">
+
+    </div>
+
+
+    <div class="hero-content">
+
+
+        <h1>
+
+            Welcome to
+
+            <span>
+                IT Computer College
+            </span>
+
+        </h1>
+
+
+        <p>
+
+            Learn Modern Skills • Build Your Future •
+            Start Your Career
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+
+            <a href="#courses"
+               class="btn btn-primary">
+
+                <i class="fas fa-book-open"></i>
+
+                &nbsp;
+
+                View Courses
+
+            </a>
+
+
+            <a href="#admission"
+               class="btn btn-outline">
+
+                <i class="fas fa-user-plus"></i>
+
+                &nbsp;
+
+                Apply Now
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section id="about"
+         class="about-section">
+
+
+<div class="container">
+
+
+<div class="section-title">
+
+    <h2>
+        About IT College
+    </h2>
+
+    <p>
+        Professional Education • Practical Skills • Bright Future
+    </p>
+
+</div>
+
+
+<div class="about-grid">
+
+
+<div class="about-image">
+
+    <img src="building.png"
+         alt="IT Computer College Zafarwal">
+
+</div>
+
+
+<div class="about-text">
+
+
+<h3>
+    About IT Computer College Zafarwal
+</h3>
+
+
+<p>
+    IT Computer College Zafarwal is a modern and professional
+    computer education and skills development institute
+    dedicated to providing quality education and practical
+    training to students.
+</p>
+
+
+<p>
+    Our mission is not just to provide certificates, but to
+    equip students with practical, career-focused skills that
+    can help them build successful careers, secure jobs,
+    start freelancing, earn online, or establish their own
+    businesses.
+</p>
+
+
+<p>
+    We provide a modern learning environment with fully
+    equipped computer labs, multimedia classrooms, experienced
+    instructors, practical training, regular assignments,
+    presentations, and communication practice.
+</p>
+
+
+<p>
+    Our courses are designed according to the needs of today's
+    digital world, helping students develop skills that are
+    valuable in both local and international markets.
+</p>
+
+
+<div class="about-special-box">
+
+    <h4>
+
+        <i class="fas fa-eye"></i>
+
+        Our Vision
+
+    </h4>
+
+    <p>
+
+        To empower students with practical skills,
+        modern knowledge, and confidence to succeed
+        in the digital world.
+
+    </p>
+
+</div>
+
+
+<div class="about-special-box">
+
+    <h4>
+
+        <i class="fas fa-bullseye"></i>
+
+        Our Mission
+
+    </h4>
+
+    <p>
+
+        To provide affordable, quality, and practical
+        education that creates real opportunities for
+        employment, freelancing, entrepreneurship,
+        and personal growth.
+
+    </p>
+
+</div>
+
+
+<div class="about-special-box">
+
+    <h4>
+
+        <i class="fas fa-rocket"></i>
+
+        Career-Focused Education
+
+    </h4>
+
+    <p>
+
+        At IT Computer College Zafarwal, we believe that
+        the future belongs to those who have the right skills.
+        Our goal is to transform students into skilled,
+        confident, and career-ready professionals.
+
+    </p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     STATS
+========================================================= -->
+
+<section class="stats">
+
+
+<div class="stats-grid">
+
+
+<div class="stat">
+
+    <i class="fas fa-user-graduate"></i>
+
+    <h3>
+        2000+
+    </h3>
+
+    <p>
+        Students
+    </p>
+
+</div>
+
+
+<div class="stat">
+
+    <i class="fas fa-book-open"></i>
+
+    <h3>
+        12+
+    </h3>
+
+    <p>
+        Professional Courses
+    </p>
+
+</div>
+
+
+<div class="stat">
+
+    <i class="fas fa-chalkboard-user"></i>
+
+    <h3>
+        10+
+    </h3>
+
+    <p>
+        Professional Teachers
+    </p>
+
+</div>
+
+
+<div class="stat">
+
+    <i class="fas fa-award"></i>
+
+    <h3>
+        100%
+    </h3>
+
+    <p>
+        Skill Based Training
+    </p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     COURSES
+========================================================= -->
+
+<section class="courses"
+         id="courses">
+
+
+<div class="container">
+
+
+<div class="section-title">
+
+    <h2>
+        Our Professional Courses
+    </h2>
+
+    <p>
+        Choose the right skill for your future
+    </p>
+
+</div>
+
+
+<div class="course-grid">
+
+
+<!-- COMPUTER -->
+
+<div class="course-card">
+
+    <div class="course-icon">
+        <i class="fas fa-desktop"></i>
+    </div>
+
+    <h3>
+        Computer Course
+    </h3>
+
+    <p>
+        Basic to advanced computer skills,
+        office work and professional computer training.
+    </p>
+
+    <div class="course-duration">
+        <i class="fas fa-clock"></i>
+        3 Months • 6 Months • 1 Year
+    </div>
+
+</div>
+
+
+<!-- WEB DEVELOPMENT -->
+
+<div class="course-card">
+
+    <div class="course-icon">
+        <i class="fas fa-code"></i>
+    </div>
+
+    <h3>
+        Web Development
+    </h3>
+
+    <p>
+        Learn HTML, CSS, JavaScript, responsive websites,
+        modern web design and development skills.
+    </p>
+
+    <div class="course-duration">
+        <i class="fas fa-clock"></i>
+        1 Year
+    </div>
+
+</div>
+
+
+<!-- SPOKEN ENGLISH -->
+
+<div class="course-card">
+
+    <div class="course-icon">
+        <i class="fas fa-language"></i>
+    </div>
+
+    <h3>
+        Spoken English
+    </h3>
+
+    <p>
+        Improve English speaking, vocabulary,
+        grammar and communication skills.
+    </p>
+
+    <div class="course-duration">
+        <i class="fas fa-clock"></i>
+        3 Months • 6 Months • 1 Year
+    </div>
+
+</div>
+
+
+<!-- GRAPHIC DESIGN -->
+
+<div class="course-card">
+
+    <div class="course-icon">
+        <i class="fas fa-pen-nib"></i>
+    </div>
+
+    <h3>
+        Graphic Designing
+    </h3>
+
+    <p>
+        CorelDRAW, Photoshop, Illustrator,
+        Prompt Engineering, Video Editing, logo, poster
+        and social media designing.
+    </p>
+
+    <div class="course-duration">
+        <i class="fas fa-clock"></i>
+        3 Months • 6 Months • 1 Year
+    </div>
+
+</div>
+
+
+<!-- OFFICE -->
+
+<div class="course-card">
+
+    <div class="course-icon">
+        <i class="fas fa-briefcase"></i>
+    </div>
+
+    <h3>
+        Office Management
+    </h3>
+
+    <p>
+        MS Word, Excel, PowerPoint, InPage, Basic Computer,
+        Software Installation, Internet Browsing and Typing.
+    </p>
+
+    <div class="course-duration">
+        <i class="fas fa-clock"></i>
+        3 Months • 6 Months • 1 Year
+    </div>
+
+</div>
+
+
+<!-- DIGITAL MARKETING -->
+
+<div class="course-card">
+
+    <div class="course-icon">
+        <i class="fas fa-bullhorn"></i>
+    </div>
+
+    <h3>
+        Digital Marketing
+    </h3>
+
+    <p>
+        Social media marketing, online promotion,
+        content strategy and digital business skills.
+    </p>
+
+    <div class="course-duration">
+        <i class="fas fa-clock"></i>
+        1 Year
+    </div>
+
+</div>
+
+
+<!-- FREELANCING -->
+
+<div class="course-card">
+
+    <div class="course-icon">
+        <i class="fas fa-laptop"></i>
+    </div>
+
+    <h3>
+        Freelancing
+    </h3>
+
+    <p>
+        Learn online work, freelancing platforms,
+        client communication and earning skills.
+    </p>
+
+    <div class="course-duration">
+        <i class="fas fa-clock"></i>
+        1 Year
+    </div>
+
+</div>
+
+
+<!-- MOBILE -->
+
+<div class="course-card">
+
+    <div class="course-icon">
+        <i class="fas fa-mobile-screen"></i>
+    </div>
+
+    <h3>
+        Mobile Repairing
+    </h3>
+
+    <p>
+        Practical mobile repairing,
+        troubleshooting and hardware skills.
+    </p>
+
+    <div class="course-duration">
+        <i class="fas fa-clock"></i>
+        3 Months • 6 Months • 1 Year
+    </div>
+
+</div>
+
+
+<!-- SHORTHAND -->
+
+<div class="course-card">
+
+    <div class="course-icon">
+        <i class="fas fa-keyboard"></i>
+    </div>
+
+    <h3>
+        Shorthand / Stenography
+    </h3>
+
+    <p>
+        Shorthand writing, typing and
+        professional office communication skills.
+    </p>
+
+    <div class="course-duration">
+        <i class="fas fa-clock"></i>
+        3 Months • 6 Months • 1 Year
+    </div>
+
+</div>
+
+
+<!-- BEAUTICIAN -->
+
+<div class="course-card">
+
+    <div class="course-icon">
+        <i class="fas fa-spa"></i>
+    </div>
+
+    <h3>
+        Beautician Course
+    </h3>
+
+    <p>
+        Beauty care, makeup and
+        professional salon skills.
+    </p>
+
+    <div class="course-duration">
+        <i class="fas fa-clock"></i>
+        3 Months • 6 Months • 1 Year
+    </div>
+
+</div>
+
+
+<!-- TRADING -->
+
+<div class="course-card">
+
+    <div class="course-icon">
+        <i class="fas fa-chart-line"></i>
+    </div>
+
+    <h3>
+        Trading & Forex
+    </h3>
+
+    <p>
+        Trading basics, market analysis,
+        charts and risk management.
+    </p>
+
+    <div class="course-duration">
+        <i class="fas fa-clock"></i>
+        3 Months • 6 Months • 1 Year
+    </div>
+
+</div>
+
+
+<!-- FASHION -->
+
+<div class="course-card">
+
+    <div class="course-icon">
+        <i class="fas fa-shirt"></i>
+    </div>
+
+    <h3>
+        Fashion Designing
+    </h3>
+
+    <p>
+        Fashion designing, dress planning,
+        cutting and professional design skills.
+    </p>
+
+    <div class="course-duration">
+        <i class="fas fa-clock"></i>
+        3 Months • 6 Months • 1 Year
+    </div>
+
+</div>
+
+
+<!-- DRESS MAKING -->
+
+<div class="course-card">
+
+    <div class="course-icon">
+        <i class="fas fa-scissors"></i>
+    </div>
+
+    <h3>
+        Dress Making & Stitching
+    </h3>
+
+    <p>
+        Cutting, stitching, measurements,
+        dress making and practical fashion skills.
+    </p>
+
+    <div class="course-duration">
+        <i class="fas fa-clock"></i>
+        3 Months • 6 Months • 1 Year
+    </div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     WHY CHOOSE US
+========================================================= -->
+
+<section class="why-section">
+
+
+<div class="container">
+
+
+<div class="section-title">
+
+    <h2>
+        Why Choose Us?
+    </h2>
+
+    <p>
+        Everything you need for practical and professional learning
+    </p>
+
+</div>
+
+
+<div class="why-grid">
+
+
+<div class="why-card">
+
+    <i class="fas fa-laptop-code"></i>
+
+    <h3>
+        Practical & Skill-Based Learning
+    </h3>
+
+    <p>
+        We focus on practical skills that students can
+        use in real-world careers.
+    </p>
+
+</div>
+
+
+<div class="why-card">
+
+    <i class="fas fa-user-tie"></i>
+
+    <h3>
+        Experienced Teachers
+    </h3>
+
+    <p>
+        Learn from professional, experienced and
+        supportive instructors.
+    </p>
+
+</div>
+
+
+<div class="why-card">
+
+    <i class="fas fa-computer"></i>
+
+    <h3>
+        Modern Computer Labs
+    </h3>
+
+    <p>
+        Modern computer facilities and a professional
+        learning environment.
+    </p>
+
+</div>
+
+
+<div class="why-card">
+
+    <i class="fas fa-briefcase"></i>
+
+    <h3>
+        Career & Freelancing Guidance
+    </h3>
+
+    <p>
+        Guidance to help students prepare for jobs,
+        freelancing and online opportunities.
+    </p>
+
+</div>
+
+
+<div class="why-card">
+
+    <i class="fas fa-comments"></i>
+
+    <h3>
+        Communication Development
+    </h3>
+
+    <p>
+        Improve communication, confidence and
+        personality development.
+    </p>
+
+</div>
+
+
+<div class="why-card">
+
+    <i class="fas fa-certificate"></i>
+
+    <h3>
+        Professional Certificates
+    </h3>
+
+    <p>
+        Complete your course with professional
+        learning and certification.
+    </p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     CEO
+========================================================= -->
+
+<section class="principal">
+
+
+<div class="container">
+
+
+<div class="section-title">
+
+    <h2>
+        Our CEO
+    </h2>
+
+    <p>
+        Leadership & College Administration
+    </p>
+
+</div>
+
+
+<div class="principal-card">
+
+
+    <img src="image1.jpeg"
+         alt="CEO IT Computer College Zafarwal">
+
+
+    <h3>
+        CEO
+    </h3>
+
+
+    <p>
+        IT Computer College Zafarwal
+    </p>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     TEACHERS
+========================================================= -->
+
+<section id="teachers">
+
+
+<div class="container">
+
+
+<div class="section-title">
+
+    <h2>
+        Our Teachers
+    </h2>
+
+    <p>
+        Professional and practical learning
+    </p>
+
+</div>
+
+
+<div class="teacher-grid">
+
+
+<div class="teacher-card">
+
+
+    <img src="images/zahid.jpeg"
+         alt="Sir Muhammad Zahid"
+         onclick="openImage(this.src,this.alt)">
+
+
+    <div>
+
+        <h3>
+            Sir Muhammad Zahid
+        </h3>
+
+        <div class="teacher-role">
+            Computer & Professional Skills Instructor
+        </div>
+
+        <p>
+            Basic Computer, Office Management,
+            Graphic Design and Spoken English.
+        </p>
+
+        <span class="experience">
+            <i class="fas fa-briefcase"></i>
+            2 Years Experience
+        </span>
+
+    </div>
+
+
+</div>
+
+
+<div class="teacher-card">
+
+
+    <img src="images/tanweer.jpeg"
+         alt="Sir Muhammad Tanvir Dilshad"
+         onclick="openImage(this.src,this.alt)">
+
+
+    <div>
+
+        <h3>
+            Sir Muhammad Tanvir Dilshad
+        </h3>
+
+        <div class="teacher-role">
+            Professional & International Training Instructor
+        </div>
+
+        <p>
+            An experienced professional with 15 years of
+            teaching and professional work experience.
+            He has also worked in international environments,
+            bringing valuable practical knowledge and
+            professional exposure to students.
+        </p>
+
+        <span class="experience">
+            <i class="fas fa-briefcase"></i>
+            15 Years Experience • International Work Experience
+        </span>
+
+    </div>
+
+
+</div>
+
+
+<div class="teacher-card">
+
+
+    <div class="teacher-avatar-icon" aria-label="Web Development Instructor">
+        <img src="images/Muaz.jpeg" alt="Hafiz Muhammad Muaz Bin Yasin" class="zoomable-teacher-image" onclick="openTeacherImage(this.src, this.alt)" title="Click to view image">
+    </div>
+
+
+    <div>
+
+        <h3>
+            Hafiz Muhammad Muaz Bin Yasin
+        </h3>
+
+        <div class="teacher-role">
+            Web Development Instructor
+        </div>
+
+        <p>
+            A dedicated web development instructor focused on practical,
+            modern and professional website development. He helps students
+            build strong foundations in HTML, CSS and JavaScript, create
+            responsive websites, understand modern web tools, and develop
+            real-world projects with confidence.
+            <br><br>
+            His teaching approach focuses on practical projects, problem
+            solving, clean coding and career-ready web development skills.
+        </p>
+
+        <span class="experience">
+            <i class="fas fa-code"></i>
+            Web Development • Practical Projects • Career Skills
+        </span>
+
+    </div>
+
+
+</div>
+
+
+<div class="teacher-card">
+
+
+<div class="teacher-avatar-icon" aria-label="Madam Amina Azam">
+    <img
+        src="images/amina.jpeg"
+        alt="Madam Amina Azam"
+        class="zoomable-teacher-image"
+        onclick="openTeacherImage(this.src, this.alt)"
+        title="Click to view image"
+    >
+</div>
+
+    <div>
+
+        <h3>
+            Madam Amina Azam
+        </h3>
+
+        <div class="teacher-role">
+            Student Affairs &amp; Computer Education
+        </div>
+
+        <p>
+            Our Madam is dedicated to maintaining discipline, punctuality,
+            and a positive learning environment. She ensures that all
+            students follow college rules, attend classes regularly, and
+            maintain proper attendance. She takes care of students' needs
+            and provides guidance and support whenever required.
+            <br><br>
+            She also teaches Basic Computer Skills, Office Management,
+            and Typing, helping students develop practical knowledge and
+            professional skills for their future careers.
+            <br><br>
+            She plays an important role in building students’ confidence,
+            discipline, and practical computer skills, preparing them for
+            a successful professional future.
+        </p>
+
+        <span class="experience">
+            <i class="fas fa-user-graduate"></i>
+            Discipline • Care • Guidance • Professional Skills
+        </span>
+
+    </div>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     SUCCESS STORIES
+========================================================= -->
+
+<section class="success-section"
+         id="success">
+
+
+<div class="container">
+
+
+<div class="section-title">
+
+    <h2>
+        Our Success Stories
+    </h2>
+
+    <p>
+        Explore the achievements and memorable moments
+        of IT Computer College Zafarwal
+    </p>
+
+</div>
+
+
+<div class="success-launch-box">
+
+
+    <div class="success-launch-icon">
+
+        <i class="fas fa-trophy"></i>
+
+    </div>
+
+
+    <h3>
+        Student Success Stories
+    </h3>
+
+
+    <p>
+        Click below to explore memorable moments,
+        achievements and success stories of our students.
+    </p>
+
+
+    <button class="success-view-btn"
+            onclick="openSuccessGallery()">
+
+        <i class="fas fa-images"></i>
+
+        &nbsp;
+
+        View Success Stories
+
+    </button>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     ADMISSION
+========================================================= -->
+
+<section class="admission"
+         id="admission">
+
+
+<div class="container">
+
+
+<div class="section-title">
+
+    <h2>
+        Admission Form
+    </h2>
+
+    <p>
+        Fill the form and submit your admission request on WhatsApp
+    </p>
+
+</div>
+
+
+<div class="form-box">
+
+
+<form id="admissionForm">
+
+
+<div class="form-grid">
+
+
+<div class="form-group">
+
+    <label>
+        Student Name
+    </label>
+
+    <input type="text"
+           id="studentName"
+           required>
+
+</div>
+
+
+<div class="form-group">
+
+    <label>
+        Father Name
+    </label>
+
+    <input type="text"
+           id="fatherName"
+           required>
+
+</div>
+
+
+<div class="form-group">
+
+    <label>
+        Student CNIC Number
+    </label>
+
+    <input type="text"
+           id="studentCNIC"
+           placeholder="XXXXX-XXXXXXX-X"
+           maxlength="15"
+           required>
+
+</div>
+
+
+<div class="form-group">
+
+    <label>
+        Father CNIC Number
+    </label>
+
+    <input type="text"
+           id="fatherCNIC"
+           placeholder="XXXXX-XXXXXXX-X"
+           maxlength="15"
+           required>
+
+</div>
+
+
+<div class="form-group">
+
+    <label>
+        Mobile Number
+    </label>
+
+    <input type="tel"
+           id="mobile"
+           required>
+
+</div>
+
+
+<div class="form-group">
+
+    <label>
+        Qualification
+    </label>
+
+    <input type="text"
+           id="qualification"
+           placeholder="e.g. Matric, Intermediate, Bachelor"
+           required>
+
+</div>
+
+
+<div class="form-group">
+
+    <label>
+        Gender
+    </label>
+
+    <div class="gender-box">
+
+        <label>
+            <input type="radio"
+                   name="gender"
+                   value="Male"
+                   required>
+            Male
+        </label>
+
+        <label>
+            <input type="radio"
+                   name="gender"
+                   value="Female">
+            Female
+        </label>
+
+    </div>
+
+</div>
+
+
+<div class="form-group">
+
+    <label>
+        Course
+    </label>
+
+    <select id="course"
+            required>
+
+        <option value="">
+            Select Course
+        </option>
+
+        <option>
+            Computer Course
+        </option>
+
+        <option>
+            Web Development
+        </option>
+
+        <option>
+            Spoken English
+        </option>
+
+        <option>
+            Mobile Repairing
+        </option>
+
+        <option>
+            Shorthand / Stenography
+        </option>
+
+        <option>
+            Beautician
+        </option>
+
+        <option>
+            Graphic Designing
+        </option>
+
+        <option>
+            Office Management
+        </option>
+
+        <option>
+            Digital Marketing
+        </option>
+
+        <option>
+            Freelancing
+        </option>
+
+        <option>
+            E-Commerce
+        </option>
+
+        <option>
+            Trading & Forex
+        </option>
+
+        <option>
+            Fashion Designing
+        </option>
+
+        <option>
+            Dress Making & Stitching
+        </option>
+
+    </select>
+
+</div>
+
+
+<div class="form-group full">
+
+    <label>
+        Address
+    </label>
+
+    <textarea id="address"
+              required></textarea>
+
+</div>
+
+
+<div class="form-group">
+
+    <label>
+        Duration
+    </label>
+
+    <select id="duration"
+            required>
+
+        <option value="">
+            Select Duration
+        </option>
+
+        <option>
+            3 Months
+        </option>
+
+        <option>
+            6 Months
+        </option>
+
+        <option>
+            1 Year
+        </option>
+
+    </select>
+
+</div>
+
+
+<div class="form-group full">
+
+    <button type="submit"
+            class="submit-btn">
+
+        <i class="fab fa-whatsapp"></i>
+
+        &nbsp;
+
+        Submit Admission on WhatsApp
+
+    </button>
+
+</div>
+
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section class="contact"
+         id="contact">
+
+
+<div class="container">
+
+
+<div class="section-title">
+
+    <h2 style="color:#fff;">
+        Contact Us
+    </h2>
+
+    <p style="color:#c8d8ec;">
+        Get in touch with IT Computer College Zafarwal
+    </p>
+
+</div>
+
+
+<div class="contact-grid">
+
+
+<div class="contact-card"
+     onclick="window.open('https://www.google.com/maps/search/?api=1&query=Mian+Narowal+Road+1st+Floor+Faisal+Bank+Zafarwal','_blank')"
+     style="cursor:pointer;">
+
+
+    <div class="contact-icon">
+
+        <i class="fas fa-location-dot"></i>
+
+    </div>
+
+
+    <h3>
+        Address
+    </h3>
+
+
+    <p>
+
+        Mian Narowal Road<br>
+
+        1st Floor Faisal Bank<br>
+
+        Zafarwal
+
+    </p>
+
+
+    <small style="
+        display:block;
+        margin-top:12px;
+        color:#56b4ff;
+    ">
+
+        <i class="fas fa-map-marker-alt"></i>
+
+        Click to Open Location
+
+    </small>
+
+
+</div>
+
+
+<div class="contact-card">
+
+
+    <div class="contact-icon">
+
+        <i class="fas fa-phone"></i>
+
+    </div>
+
+
+    <h3>
+        Phone / WhatsApp
+    </h3>
+
+
+    <p>
+
+        0 334 8244340
+
+    </p>
+
+
+</div>
+
+
+<div class="contact-card">
+
+
+    <div class="contact-icon">
+
+        <i class="fas fa-clock"></i>
+
+    </div>
+
+
+    <h3>
+        College Timing
+    </h3>
+
+
+    <p>
+
+        <strong style="color:#56b4ff;">
+            8:00 AM – 4:00 PM
+        </strong>
+
+        <br>
+
+        Flexible Shift Available
+
+        <br>
+
+        Sunday Off
+
+    </p>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     SUCCESS STORIES MODAL
+========================================================= -->
+
+<div class="success-modal"
+     id="successModal">
+
+
+    <div class="success-modal-header">
+
+
+        <h2>
+            <i class="fas fa-trophy"></i>
+            Success Stories
+        </h2>
+
+
+        <button class="success-close"
+                onclick="closeSuccessGallery()">
+
+            <i class="fas fa-times"></i>
+
+        </button>
+
+
+    </div>
+
+
+    <div class="success-gallery-grid">
+
+
+        <div class="success-thumb" onclick="openImageFromThumb(this)">
+            <img src="success/a.jpg"
+                 alt="Success Story A"
+                 data-image-base="success/a"
+                 onerror="imageFallback(this)">
+        </div>
+
+
+        <div class="success-thumb" onclick="openImageFromThumb(this)">
+            <img src="success/b.jpg"
+                 alt="Success Story B"
+                 data-image-base="success/b"
+                 onerror="imageFallback(this)">
+        </div>
+
+
+        <div class="success-thumb" onclick="openImageFromThumb(this)">
+            <img src="success/c.jpg"
+                 alt="Success Story C"
+                 data-image-base="success/c"
+                 onerror="imageFallback(this)">
+        </div>
+
+
+        <div class="success-thumb" onclick="openImageFromThumb(this)">
+            <img src="success/d.jpg"
+                 alt="Success Story D"
+                 data-image-base="success/d"
+                 onerror="imageFallback(this)">
+        </div>
+
+
+        <div class="success-thumb" onclick="openImageFromThumb(this)">
+            <img src="success/e.jpg"
+                 alt="Success Story E"
+                 data-image-base="success/e"
+                 onerror="imageFallback(this)">
+        </div>
+
+
+        <div class="success-thumb" onclick="openImageFromThumb(this)">
+            <img src="success/f.jpg"
+                 alt="Success Story F"
+                 data-image-base="success/f"
+                 onerror="imageFallback(this)">
+        </div>
+
+
+        <div class="success-thumb" onclick="openImageFromThumb(this)">
+            <img src="success/g.jpg"
+                 alt="Success Story G"
+                 data-image-base="success/g"
+                 onerror="imageFallback(this)">
+        </div>
+
+
+        <div class="success-thumb" onclick="openImageFromThumb(this)">
+            <img src="success/h.jpg"
+                 alt="Success Story H"
+                 data-image-base="success/h"
+                 onerror="imageFallback(this)">
+        </div>
+
+
+        <div class="success-thumb" onclick="openImageFromThumb(this)">
+            <img src="success/i.jpg"
+                 alt="Success Story I"
+                 data-image-base="success/i"
+                 onerror="imageFallback(this)">
+        </div>
+
+
+        <div class="success-thumb" onclick="openImageFromThumb(this)">
+            <img src="success/j.jpg"
+                 alt="Success Story J"
+                 data-image-base="success/j"
+                 onerror="imageFallback(this)">
+        </div>
+
+
+        <div class="success-thumb" onclick="openImageFromThumb(this)">
+            <img src="success/k.jpg"
+                 alt="Success Story K"
+                 data-image-base="success/k"
+                 onerror="imageFallback(this)">
+        </div>
+
+
+        <div class="success-thumb" onclick="openImageFromThumb(this)">
+            <img src="success/l.jpg"
+                 alt="Success Story L"
+                 data-image-base="success/l"
+                 onerror="imageFallback(this)">
+        </div>
+
+
+        <div class="success-thumb" onclick="openImageFromThumb(this)">
+            <img src="success/m.jpg"
+                 alt="Success Story M"
+                 data-image-base="success/m"
+                 onerror="imageFallback(this)">
+        </div>
+
+
+        <div class="success-thumb" onclick="openImageFromThumb(this)">
+            <img src="success/n.jpg"
+                 alt="Success Story N"
+                 data-image-base="success/n"
+                 onerror="imageFallback(this)">
+        </div>
+
+
+        <div class="success-thumb" onclick="openImageFromThumb(this)">
+            <img src="success/o.jpg"
+                 alt="Success Story O"
+                 data-image-base="success/o"
+                 onerror="imageFallback(this)">
+        </div>
+
+
+        <div class="success-thumb" onclick="openImageFromThumb(this)">
+            <img src="success/p.jpg"
+                 alt="Success Story P"
+                 data-image-base="success/p"
+                 onerror="imageFallback(this)">
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     IMAGE ZOOM MODAL
+========================================================= -->
+
+<div class="image-modal"
+     id="imageModal"
+     onclick="closeImage(event)">
+
+
+    <button class="close-modal"
+            onclick="closeImage()">
+
+        <i class="fas fa-times"></i>
+
+    </button>
+
+
+    <div class="modal-content"
+         id="modalContent">
+
+        <img id="modalImage"
+             src=""
+             alt="Image">
+
+    </div>
+
+
+    <div class="zoom-controls">
+
+
+        <button onclick="zoomOut(event)"
+                title="Zoom Out">
+
+            <i class="fas fa-minus"></i>
+
+        </button>
+
+
+        <div class="zoom-level"
+             id="zoomLevel">
+
+            100%
+
+        </div>
+
+
+        <button onclick="zoomIn(event)"
+                title="Zoom In">
+
+            <i class="fas fa-plus"></i>
+
+        </button>
+
+
+        <button onclick="resetZoom(event)"
+                title="Reset Zoom">
+
+            <i class="fas fa-expand"></i>
+
+        </button>
+
+
+    </div>
+
+
+</div>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+
+<div class="footer-social">
+
+
+    <a href="https://www.youtube.com/@Itcomputercollege"
+       target="_blank"
+       aria-label="YouTube">
+
+        <i class="fab fa-youtube"></i>
+
+    </a>
+
+
+    <a href="https://www.facebook.com/i.tcomputercollege"
+       target="_blank"
+       aria-label="Facebook">
+
+        <i class="fab fa-facebook-f"></i>
+
+    </a>
+
+
+    <a href="https://wa.me/923348244340"
+       target="_blank"
+       aria-label="WhatsApp">
+
+        <i class="fab fa-whatsapp"></i>
+
+    </a>
+
+
+    <a href="https://www.tiktok.com/@itcomputercollegezwl?_r=1&_t=ZS-9AO4T7QHT0L"
+       target="_blank"
+       aria-label="TikTok">
+
+        <i class="fab fa-tiktok"></i>
+
+    </a>
+
+
+</div>
+
+
+<p>
+
+    © 2026 IT Computer College Zafarwal.
+    All Rights Reserved.
+
+</p>
+
+
+</footer>
+
+
+<!-- =========================================================
+     WHATSAPP FLOAT
+========================================================= -->
+
+<a class="whatsapp-float"
+   href="https://wa.me/923348244340"
+   target="_blank"
+   aria-label="WhatsApp">
+
+    <i class="fab fa-whatsapp"></i>
+
+</a>
+
+
+<!-- =========================================================
+     SCROLL TOP
+========================================================= -->
+
+<button class="scroll-top"
+        id="scrollTop"
+        onclick="window.scrollTo({
+            top:0,
+            behavior:'smooth'
+        })">
+
+    <i class="fas fa-arrow-up"></i>
+
+</button>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+function toggleMenu(){
+
+    const nav =
+        document.getElementById("navLinks");
+
+    nav.classList.toggle("active");
+
+}
+
+
+/* =========================================================
+   COURSE DROPDOWN
+========================================================= */
+
+function toggleDropdown(event){
+
+    event.preventDefault();
+    event.stopPropagation();
+
+    const dropdown =
+        event.currentTarget.parentElement;
+
+    dropdown.classList.toggle("active");
+
+}
+
+
+/* =========================================================
+   NESTED DROPDOWN
+========================================================= */
+
+function toggleSubmenu(event){
+
+    event.preventDefault();
+    event.stopPropagation();
+
+    const submenu =
+        event.currentTarget.parentElement;
+
+    submenu.classList.toggle("active");
+
+}
+
+
+/* =========================================================
+   SUCCESS STORIES
+========================================================= */
+
+function openSuccessGallery(){
+
+    const modal =
+        document.getElementById("successModal");
+
+    modal.classList.add("active");
+
+    document.body.style.overflow = "hidden";
+
+    document
+        .getElementById("navLinks")
+        .classList.remove("active");
+
+}
+
+
+function closeSuccessGallery(){
+
+    document
+        .getElementById("successModal")
+        .classList.remove("active");
+
+    document.body.style.overflow = "";
+
+}
+
+
+/* =========================================================
+   IMAGE FALLBACK
+========================================================= */
+
+function imageFallback(img){
+
+    const base =
+        img.dataset.imageBase;
+
+    const extensions =
+        [".jpg",".jpeg",".png",".webp"];
+
+    const attempt =
+        Number(img.dataset.attempt || 0);
+
+    if(attempt < extensions.length){
+
+        img.dataset.attempt =
+            String(attempt + 1);
+
+        img.src =
+            base + extensions[attempt];
+
+    }
+
+}
+
+
+/* =========================================================
+   OPEN IMAGE FROM SUCCESS STORY
+========================================================= */
+
+function openImageFromThumb(card){
+
+    const image =
+        card.querySelector("img");
+
+    if(!image) return;
+
+    const src =
+        image.currentSrc || image.src;
+
+    if(!src) return;
+
+    openImage(src,image.alt);
+
+}
+
+
+/* =========================================================
+   IMAGE POPUP
+========================================================= */
+
+let currentZoom = 1;
+
+const minZoom = 0.5;
+
+const maxZoom = 3;
+
+const zoomStep = 0.25;
+
+
+function openImage(src,alt){
+
+    const modal =
+        document.getElementById("imageModal");
+
+    const image =
+        document.getElementById("modalImage");
+
+    currentZoom = 1;
+
+    image.src = src;
+
+    image.alt = alt;
+
+    updateZoom();
+
+    modal.classList.add("active");
+
+    document.body.style.overflow = "hidden";
+
+}
+
+
+function updateZoom(){
+
+    const image =
+        document.getElementById("modalImage");
+
+    const zoomLevel =
+        document.getElementById("zoomLevel");
+
+    image.style.transform =
+        "scale(" + currentZoom + ")";
+
+    zoomLevel.textContent =
+        Math.round(currentZoom * 100) + "%";
+
+}
+
+
+function zoomIn(event){
+
+    if(event){
+        event.stopPropagation();
+    }
+
+    if(currentZoom < maxZoom){
+
+        currentZoom += zoomStep;
+
+        updateZoom();
+
+    }
+
+}
+
+
+function zoomOut(event){
+
+    if(event){
+        event.stopPropagation();
+    }
+
+    if(currentZoom > minZoom){
+
+        currentZoom -= zoomStep;
+
+        updateZoom();
+
+    }
+
+}
+
+
+function resetZoom(event){
+
+    if(event){
+        event.stopPropagation();
+    }
+
+    currentZoom = 1;
+
+    updateZoom();
+
+}
+
+
+/* =========================================================
+   CLOSE IMAGE
+========================================================= */
+
+function closeImage(event){
+
+    if(
+        event &&
+        event.target &&
+        event.target.id !== "imageModal" &&
+        !event.target.closest(".close-modal")
+    ){
+
+        return;
+
+    }
+
+    document
+        .getElementById("imageModal")
+        .classList.remove("active");
+
+    document.body.style.overflow = "";
+
+}
+
+
+/* =========================================================
+   ESCAPE KEY
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Escape"){
+
+            document
+                .getElementById("imageModal")
+                .classList.remove("active");
+
+            document
+                .getElementById("successModal")
+                .classList.remove("active");
+
+            document.body.style.overflow = "";
+
+        }
+
+
+        if(
+            document
+                .getElementById("imageModal")
+                .classList.contains("active")
+        ){
+
+            if(
+                event.key === "+" ||
+                event.key === "="
+            ){
+
+                zoomIn();
+
+            }
+
+            if(event.key === "-"){
+
+                zoomOut();
+
+            }
+
+            if(event.key === "0"){
+
+                resetZoom();
+
+            }
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   ADMISSION WHATSAPP
+========================================================= */
+
+document
+    .getElementById("admissionForm")
+    .addEventListener(
+        "submit",
+        function(event){
+
+            event.preventDefault();
+
+
+            const studentName =
+                document
+                    .getElementById("studentName")
+                    .value
+                    .trim();
+
+
+            const fatherName =
+                document
+                    .getElementById("fatherName")
+                    .value
+                    .trim();
+
+
+            const studentCNIC =
+                document
+                    .getElementById("studentCNIC")
+                    .value
+                    .trim();
+
+
+            const fatherCNIC =
+                document
+                    .getElementById("fatherCNIC")
+                    .value
+                    .trim();
+
+
+            const mobile =
+                document
+                    .getElementById("mobile")
+                    .value
+                    .trim();
+
+
+            const qualification =
+                document
+                    .getElementById("qualification")
+                    .value
+                    .trim();
+
+
+            const address =
+                document
+                    .getElementById("address")
+                    .value
+                    .trim();
+
+
+            const course =
+                document
+                    .getElementById("course")
+                    .value;
+
+
+            const duration =
+                document
+                    .getElementById("duration")
+                    .value;
+
+
+            const genderElement =
+                document.querySelector(
+                    'input[name="gender"]:checked'
+                );
+
+
+            if(!genderElement){
+
+                alert(
+                    "Please select gender."
+                );
+
+                return;
+
+            }
+
+
+            if(!course){
+
+                alert(
+                    "Please select course."
+                );
+
+                return;
+
+            }
+
+
+            if(!duration){
+
+                alert(
+                    "Please select duration."
+                );
+
+                return;
+
+            }
+
+
+            const gender =
+                genderElement.value;
+
+
+            const message =
+`*IT Computer College Zafarwal - Admission Request*
+
+Student Name: ${studentName}
+Father Name: ${fatherName}
+Student CNIC: ${studentCNIC}
+Father CNIC: ${fatherCNIC}
+Mobile Number: ${mobile}
+Qualification: ${qualification}
+Gender: ${gender}
+Address: ${address}
+Course: ${course}
+Duration: ${duration}`;
+
+
+            const whatsappURL =
+                "https://wa.me/923348244340?text=" +
+                encodeURIComponent(message);
+
+
+            window.open(
+                whatsappURL,
+                "_blank"
+            );
+
+        }
+    );
+
+
+/* =========================================================
+   SCROLL TOP
+========================================================= */
+
+window.addEventListener(
+    "scroll",
+    function(){
+
+        const button =
+            document.getElementById("scrollTop");
+
+
+        if(window.scrollY > 400){
+
+            button.style.display =
+                "flex";
+
+        }else{
+
+            button.style.display =
+                "none";
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
+
+const revealElements =
+    document.querySelectorAll(
+        ".course-card, " +
+        ".teacher-card, " +
+        ".why-card, " +
+        ".contact-card, " +
+        ".about-special-box, " +
+        ".principal-card, " +
+        ".stat, " +
+        ".success-launch-box"
+    );
+
+
+const revealObserver =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(
+                entry => {
+
+                    if(entry.isIntersecting){
+
+                        entry.target.style.opacity =
+                            "1";
+
+                        entry.target.style.transform =
+                            "translateY(0)";
+
+                    }
+
+                }
+            );
+
+        },
+        {
+            threshold:.10
+        }
+    );
+
+
+revealElements.forEach(
+    element => {
+
+        element.style.opacity =
+            "0";
+
+        element.style.transform =
+            "translateY(25px)";
+
+        element.style.transition =
+            "opacity .7s ease, transform .7s ease";
+
+        revealObserver.observe(element);
+
+    }
+);
+
+
+/* =========================================================
+   CLOSE DROPDOWN OUTSIDE
+========================================================= */
+
+document.addEventListener(
+    "click",
+    function(event){
+
+        if(!event.target.closest(".dropdown")){
+
+            document
+                .querySelectorAll(".dropdown")
+                .forEach(item => {
+
+                    item.classList.remove("active");
+
+                });
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   CLOSE SUCCESS MODAL WITH BACKDROP
+========================================================= */
+
+document
+    .getElementById("successModal")
+    .addEventListener(
+        "click",
+        function(event){
+
+            if(
+                event.target ===
+                document.getElementById("successModal")
+            ){
+
+                closeSuccessGallery();
+
+            }
+
+        }
+    );
+
+
+/* =========================================================
+   MOUSE WHEEL ZOOM
+========================================================= */
+
+document
+    .getElementById("modalContent")
+    .addEventListener(
+        "wheel",
+        function(event){
+
+            event.preventDefault();
+
+            if(event.deltaY < 0){
+
+                zoomIn();
+
+            }else{
+
+                zoomOut();
+
+            }
+
+        },
+        {
+            passive:false
+        }
+    );
+
+
+/* =========================================================
+   CLOSE MOBILE MENU AFTER NORMAL LINK CLICK
+========================================================= */
+
+document
+    .querySelectorAll(
+        '#navLinks a[href^="#"]'
+    )
+    .forEach(link => {
+
+        link.addEventListener(
+            "click",
+            function(){
+
+                if(
+                    !this.closest(".has-submenu")
+                ){
+
+                    document
+                        .getElementById("navLinks")
+                        .classList.remove("active");
+
+                }
+
+            }
+        );
+
+    });
+
+</script>
+
+
+<script>
+
+/* =========================================================
+   PREMIUM MOTION ENGINE
+========================================================= */
+(function(){
+  const loader=document.createElement('div'); loader.id='premiumLoader'; loader.innerHTML='<div class="loader-core"><div class="loader-ring"></div><strong>IT COMPUTER COLLEGE</strong><span>ZAFARWAL</span></div>'; document.body.prepend(loader);
+  const progress=document.createElement('div'); progress.id='scrollProgress'; document.body.appendChild(progress);
+  const canvas=document.createElement('canvas'); canvas.id='motionCanvas'; const hero=document.querySelector('.hero'); if(hero){hero.prepend(canvas); const grid=document.createElement('div');grid.className='motion-grid';hero.prepend(grid)}
+  document.body.classList.add('motion-ready');
+  window.addEventListener('load',()=>setTimeout(()=>loader.classList.add('hide'),450));
+
+  const ctx=canvas.getContext('2d'); let particles=[]; let W=0,H=0;
+  function resize(){if(!hero)return; W=canvas.width=hero.clientWidth*devicePixelRatio; H=canvas.height=hero.clientHeight*devicePixelRatio; canvas.style.width=hero.clientWidth+'px';canvas.style.height=hero.clientHeight+'px';ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0); W=hero.clientWidth;H=hero.clientHeight; particles=Array.from({length:Math.min(65,Math.floor(W/18))},()=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.8+.4,vx:(Math.random()-.5)*.22,vy:-Math.random()*.3-.05,a:Math.random()*.55+.15}))}
+  function draw(){if(!hero)return;ctx.clearRect(0,0,W,H);particles.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.y<-5){p.y=H+5;p.x=Math.random()*W}if(p.x<-5)p.x=W+5;if(p.x>W+5)p.x=-5;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(110,200,255,'+p.a+')';ctx.fill()});requestAnimationFrame(draw)} resize();window.addEventListener('resize',resize);draw();
+
+  const headings=document.querySelectorAll('.section-title'); const reveal=document.querySelectorAll('.course-card,.why-card,.teacher-card,.contact-card,.about-special-box,.principal-card,.stat,.success-launch-box,.about-image,.about-text,.form-box');
+  headings.forEach(x=>x.classList.add('motion-reveal')); reveal.forEach((x,i)=>{x.classList.add('motion-reveal'); if(i%3===1)x.classList.add('from-right'); else if(i%3===2)x.classList.add('from-left'); x.style.transitionDelay=(Math.min(i%4,3)*70)+'ms'});
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible'); e.target.classList.add('in-view')}}),{threshold:.12}); document.querySelectorAll('.motion-reveal').forEach(x=>io.observe(x));
+
+  let ticking=false; function scrollFX(){const max=document.documentElement.scrollHeight-innerHeight; progress.style.width=(max>0?(scrollY/max*100):0)+'%'; ticking=false} window.addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(scrollFX);ticking=true}},{passive:true}); scrollFX();
+  document.addEventListener('mousemove',e=>{document.documentElement.style.setProperty('--mx',e.clientX+'px');document.documentElement.style.setProperty('--my',e.clientY+'px')},{passive:true});
+
+  /* gentle 3D tilt on desktop */
+  if(matchMedia('(pointer:fine)').matches){document.querySelectorAll('.course-card,.why-card,.principal-card,.teacher-card,.contact-card').forEach(card=>{card.addEventListener('mousemove',e=>{const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;card.style.transform=`perspective(900px) rotateX(${(-y*3).toFixed(2)}deg) rotateY(${(x*3).toFixed(2)}deg) translateY(-6px)`});card.addEventListener('mouseleave',()=>card.style.transform='')})}
+
+  /* animated number counters */
+  const nums=document.querySelectorAll('.stat h3'); const counterIO=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting||e.target.dataset.counted)return; e.target.dataset.counted='1';const raw=e.target.textContent.trim(),m=raw.match(/([0-9]+)/);if(!m)return;const target=parseInt(m[1],10),suffix=raw.slice(m.index+m[1].length);let start=0;const t0=performance.now();function tick(t){const p=Math.min(1,(t-t0)/1200),v=Math.floor((1-Math.pow(1-p,3))*target);e.target.textContent=v+suffix;if(p<1)requestAnimationFrame(tick)}requestAnimationFrame(tick)}),{threshold:.7}); nums.forEach(x=>counterIO.observe(x));
+})();
+
+</script>
+
+<div class="teacher-image-modal" id="teacherImageModal" onclick="closeTeacherImage(event)">
+  <div class="caption" id="teacherImageCaption"></div>
+  <button class="close-btn" onclick="closeTeacherImage()" aria-label="Close">&times;</button>
+  <img id="teacherZoomImage" src="" alt="" onclick="event.stopPropagation()">
+  <div class="zoom-controls" onclick="event.stopPropagation()">
+    <button onclick="zoomTeacherImage(1.2)" aria-label="Zoom in">+</button>
+    <button onclick="zoomTeacherImage(.8)" aria-label="Zoom out">−</button>
+    <button onclick="resetTeacherZoom()" aria-label="Reset zoom">↺</button>
+  </div>
+</div>
+<script>
+let teacherZoom=1;
+function openTeacherImage(src,alt){const m=document.getElementById('teacherImageModal'),i=document.getElementById('teacherZoomImage');i.src=src;i.alt=alt||'';document.getElementById('teacherImageCaption').textContent=alt||'';teacherZoom=1;i.style.transform='scale(1)';m.classList.add('active');document.body.style.overflow='hidden'}
+function zoomTeacherImage(f){teacherZoom=Math.min(3,Math.max(.6,teacherZoom*f));document.getElementById('teacherZoomImage').style.transform=`scale(${teacherZoom})`}
+function resetTeacherZoom(){teacherZoom=1;document.getElementById('teacherZoomImage').style.transform='scale(1)'}
+function closeTeacherImage(e){if(e&&e.target&&e.target.id!=='teacherImageModal')return;document.getElementById('teacherImageModal').classList.remove('active');document.body.style.overflow=''}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeTeacherImage();if(e.key==='+'||e.key==='=')zoomTeacherImage(1.2);if(e.key==='-')zoomTeacherImage(.8)});
+</script>
+</body>
+</html>
